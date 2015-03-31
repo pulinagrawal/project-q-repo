@@ -14,5 +14,5 @@
 #
 
 class Profile < ActiveRecord::Base
-	has_many :quizs
+	has_many :quizzes
 end

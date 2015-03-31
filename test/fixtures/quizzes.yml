@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: quizzes
+#
+#  id         :integer          not null, primary key
+#  end_date   :date
+#  start_date :date
+#  correct1   :boolean
+#  correct2   :boolean
+#  correct3   :boolean
+#  correct4   :boolean
+#  correct5   :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  end_date: 2015-03-31
+  start_date: 2015-03-31
+  correct1: false
+  correct2: false
+  correct3: false
+  correct4: false
+  correct5: false
+
+two:
+  end_date: 2015-03-31
+  start_date: 2015-03-31
+  correct1: false
+  correct2: false
+  correct3: false
+  correct4: false
+  correct5: false

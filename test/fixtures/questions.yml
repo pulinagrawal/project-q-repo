@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id             :integer          not null, primary key
+#  level          :integer
+#  correct_answer :string
+#  option1        :string
+#  option2        :string
+#  option3        :string
+#  option4        :string
+#  question       :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  level: 1
+  correct_answer: MyString
+  option1: MyString
+  option2: MyString
+  option3: MyString
+  option4: MyString
+  question: MyString
+
+two:
+  level: 1
+  correct_answer: MyString
+  option1: MyString
+  option2: MyString
+  option3: MyString
+  option4: MyString
+  question: MyString

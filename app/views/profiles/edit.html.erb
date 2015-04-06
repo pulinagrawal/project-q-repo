@@ -12,32 +12,34 @@ table {
 
 <h1>Edit Profile</h1>
 
+<h1> Create New Profile</h1>
+
 <%= form_for(@profile) do |f| %>
 	<table>
 		<tr>
 			<td><%= f.label :first_name %></td>
-			<td><%= f.text_field :first_name %></td>
-	</tr><br>
+			<td><%= f.text_field :first_name, placeholder: "First Name" %></td>
+	</tr>
 
 	<tr>
 			<td><%= f.label :last_name %></td>
-			<td><%= f.text_field :last_name %></td>
+			<td><%= f.text_field :last_name, placeholder: "Last Name" %></td>
 	</tr><br>
 
 
     <tr>
 			<td><%= f.label :birthday %></td>
-			<td><%= f.text_field :birthday %></td>
+			<td><%= f.text_field :birthday, placeholder: "Birthday" %></td>
 	</tr>
 
     <tr>
 			<td><%= f.label :password %></td>
-			<td><%= f.text_field :password %></td>
+			<td><%= password_field_tag(:password, "", placeholder: "Password") %></td>
 	</tr>
 
     <tr>
 			<td><%= f.label :email %></td>
-			<td><%= f.text_field :email %></td>
+			<td><%= f.text_field :email, placeholder: "Email" %></td>
 	</tr>
 
  
@@ -46,6 +48,5 @@ table {
       	<td><%= f.submit "Update Profile" %></td>
 	</tr>
 
-</table>
 
 <% end %>

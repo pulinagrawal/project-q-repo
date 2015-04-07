@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/profiles', to: 'profiles#create'
 
   get  '/profiles/:id', to: 'profiles#show', as: 'profile'
-  get  '/categories/', to: 'categories#show', as: 'category'
+  get  '/categories', to: 'categories#show', as: 'category'
 
 
   get '/profiles/:id/edit', to: 'profiles#edit', as: 'edit_profile'

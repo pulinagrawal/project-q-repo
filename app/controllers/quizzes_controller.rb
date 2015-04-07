@@ -2,7 +2,7 @@ class QuizzesController < ApplicationController
     def deduce_quiz_state
         #todo: reference @quiz
         @current_question_num = 1
-        @current_question = "Need question impl"
+        @current_question = "Need question impl?"
     end
 
     def show
@@ -16,6 +16,6 @@ class QuizzesController < ApplicationController
         
         #TODO: set correct answer
         
-        redirect_to get
+        redirect_to action: "show", id: params[:id]
     end
 end

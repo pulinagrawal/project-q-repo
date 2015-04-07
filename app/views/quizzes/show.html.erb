@@ -20,8 +20,12 @@
                     </div>
                 <% end %>
             
-                Question <%=@current_question_num%>: <%=@current_question%>
-                Answer <%= f.text_field :answer %>
+                <h3>Question <%=@current_question_num%></h3>
+                <div class="question">
+                    <%=@current_question%>
+                </div>
+                <%= f.text_field :answer, :value => "" %>
+                <button class="btn btn-primary">Answer!</button>
             <% end %>
         </div>
         <div class="col-md-4">

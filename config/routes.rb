@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   put '/profiles/:id', to: 'profiles#update'
   
     get 'quizzes/:id' => 'quizzes#show', as: 'quiz'
-    post 'quizzes/:id' => 'quizzes#answer'
+    patch 'quizzes/:id' => 'quizzes#answer'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

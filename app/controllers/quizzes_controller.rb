@@ -1,22 +1,18 @@
-#TODO: move this functionality to the model
-module QuizMock
-    def current_question_num
-        return 1
-    end
-    def current_question
-        return "Need question impl"
-    end
-end
-
 class QuizzesController < ApplicationController
+    def deduce_quiz_state
+        #todo: reference @quiz
+        @current_question_num = 1
+        @current_question = "Need question impl"
+    end
+
     def show
         @quiz = Quiz.find(params[:id])
-        @quiz.extend(QuizMock) #TODO: remove when QuizMock func refactored
+        deduce_quiz_state
     end
     
     def answer
         @quiz = Quiz.find(params[:id])
-        @quiz.extend(QuizMock) #TODO: remove when QuizMock func refactored
+        deduce_quiz_state
         
         #TODO: set correct answer
         

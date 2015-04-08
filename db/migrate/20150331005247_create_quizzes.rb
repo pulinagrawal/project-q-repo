@@ -13,3 +13,4 @@ class CreateQuizzes < ActiveRecord::Migration
     end
   end
 end
+

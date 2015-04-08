@@ -12,9 +12,17 @@
 #  correct5   :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  profile_id :integer
+#  question1  :integer
+#  question2  :integer
+#  question3  :integer
+#  question4  :integer
+#  question5  :integer
+#  user       :integer
 #
 
 class Quiz < ActiveRecord::Base
 	belongs_to :profile
 	has_many :questions
 end
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331195516) do
+ActiveRecord::Schema.define(version: 20150408143610) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150331195516) do
     t.datetime "updated_at",     null: false
     t.integer  "category_id"
     t.integer  "quiz_id"
+    t.string   "category"
   end
 
   add_index "questions", ["category_id"], name: "index_questions_on_category_id"
@@ -58,6 +59,12 @@ ActiveRecord::Schema.define(version: 20150331195516) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "profile_id"
+    t.integer  "question1"
+    t.integer  "question2"
+    t.integer  "question3"
+    t.integer  "question4"
+    t.integer  "question5"
+    t.integer  "user"
   end
 
   add_index "quizzes", ["profile_id"], name: "index_quizzes_on_profile_id"

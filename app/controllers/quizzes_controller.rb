@@ -1,29 +1,34 @@
 class QuizzesController < ApplicationController
     def deduce_quiz_state
+        #Set our defaults
         @quiz_done = false
         @current_question_num = 1
         @current_question = nil
         
-        if not @quiz.question5.nil?
+        question_index = nil
+        
+        if not @quiz.correct5.blank?
+            #All questions answered
             @quiz_done = true
             @current_question_num = nil
-            question_index = nil
-        elsif not @quiz.question4.nil?
-            @current_question_num = 5
-            question_index = @quiz.question5
-        elsif not @quiz.question3.nil?
-            @current_question_num = 4
-            question_index = @quiz.question4
-        elsif not @quiz.question2.nil?
-            @current_question_num = 3
-            question_index = @quiz.question3
-        elsif not @quiz.question1.nil?
-            @current_question_num = 2
-            question_index = @quiz.question2
         else
-            @current_question_num = 1
-            question_index = @quiz.question1
+            #Find where they are at
+            4.downto(1).each { |idx|
+                if not @quiz["correct#{idx}"].blank?
+                    @current_question_num = idx + 1
+                    question_index = @quiz["question#{idx + 1}"]
+                    break # found our question, so we're all done
+                end
+            }
+            
+            if question_index.nil?
+                #Nothing selected - must be at question 1
+                @current_question_num = 1
+                question_index = @quiz.question1
+            end
         end
+        
+        logger.debug "Quiz #{@quiz.id} Deduction: Done? #{@quiz_done}, Num:#{@current_question_num}, Q:#{@current_question}"
         
         if not question_index.nil?
             @current_question = Question.find(question_index)
@@ -34,7 +39,11 @@ class QuizzesController < ApplicationController
         @quiz = Quiz.find(params[:id])
         deduce_quiz_state
         
-        #TODO: what if quiz done?
+        if @quiz_done
+            # Quiz is completed: redirect to results
+            redirect_to action: "results", id: params[:id]
+            return
+        end        
     end
     
     def answer

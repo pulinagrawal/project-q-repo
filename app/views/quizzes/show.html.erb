@@ -21,7 +21,7 @@
         
             <h3>Question <%=@current_question_num%></h3>
             <div class="question">
-                <%=@current_question%>
+                <%=@current_question.question%>
             </div>
             <%= f.text_field :answer, :value => "" %>
             <button class="btn btn-primary">Answer!</button>

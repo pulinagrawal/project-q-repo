@@ -46,32 +46,31 @@ Quiz.create({
     user: mo,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
-    question1: math_questions[0], correct1: true,
-    question2: math_questions[1], correct2: false,
-    question3: math_questions[2], correct3: true,
-    question4: math_questions[3], correct4: nil,
-    question5: math_questions[4], correct5: nil,
+    question1: math_questions[0].id, correct1: true,
+    question2: math_questions[1].id, correct2: false,
+    question3: math_questions[2].id, correct3: true,
+    question4: math_questions[3].id, correct4: nil,
+    question5: math_questions[4].id, correct5: nil,
 })
 
 Quiz.create({
     user: mo,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
-    question1: history_questions[0], correct1: true,
-    question2: history_questions[1], correct2: false,
-    question3: history_questions[2], correct3: true,
-    question4: history_questions[3], correct4: nil,
-    question5: history_questions[4], correct5: nil,
+    question1: history_questions[0].id, correct1: true,
+    question2: history_questions[1].id, correct2: false,
+    question3: history_questions[2].id, correct3: true,
+    question4: history_questions[3].id, correct4: nil,
+    question5: history_questions[4].id, correct5: nil,
 })
 
 Quiz.create({
     user: mo,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
-    question1: geography_questions[0], correct1: true,
-    question2: geography_questions[1], correct2: false,
-    question3: geography_questions[2], correct3: true,
-    question4: geography_questions[3], correct4: nil,
-    question5: geography_questions[4], correct5: nil,
+    question1: geography_questions[0].id, correct1: true,
+    question2: geography_questions[1].id, correct2: false,
+    question3: geography_questions[2].id, correct3: true,
+    question4: geography_questions[3].id, correct4: nil,
+    question5: geography_questions[4].id, correct5: nil,
 })
-

@@ -1,13 +1,9 @@
 require 'test_helper'
 
 class QuizzesControllerTest < ActionController::TestCase
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should get show" do
-    get :show
+    get :show, {:id => 1}
     assert_response :success
   end
 

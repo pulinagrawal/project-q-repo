@@ -25,19 +25,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  end_date: 2015-03-31
-  start_date: 2015-03-31
-  correct1: false
-  correct2: false
-  correct3: false
-  correct4: false
-  correct5: false
-
-two:
-  end_date: 2015-03-31
-  start_date: 2015-03-31
-  correct1: false
-  correct2: false
-  correct3: false
-  correct4: false
-  correct5: false
+    id: 1
+    end_date: 2015-03-31
+    start_date: 2015-03-31
+    correct1: false
+    correct2: false
+    correct3: false
+    correct4: false
+    correct5: false
+    question1: 1
+    question2: 2
+    question3: 3
+    question4: 4
+    question5: 5

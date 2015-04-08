@@ -15,6 +15,7 @@
 #  category_id    :integer
 #  quiz_id        :integer
 #  category       :string
+
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

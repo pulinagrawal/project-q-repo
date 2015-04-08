@@ -19,6 +19,7 @@
 #  question4  :integer
 #  question5  :integer
 #  user       :integer
+
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

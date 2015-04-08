@@ -1,0 +1,30 @@
+<h1>Profile Update</h1>
+
+<table>
+   <tr>
+      <td>First Name: </td>
+      <td> <%= @profile.first_name %></td>
+   </tr>
+   <tr>
+      <td>Last Name:</td>
+      <td><%= @profile.last_name %></td>
+   </tr>
+   <tr>
+      <td>Birthday:</td>
+      <td><%= @profile.birthday %></td>
+   </tr>
+   <tr>
+      <td>Password:</td>
+      <td><%= @profile.password %></td>
+   </tr>
+   <tr>
+      <td>Email:</td>
+      <td><%= @profile.email %></td>
+   </tr>
+   <tr>
+     <td><%= link_to "Click here to edit profile", edit_profile_path(@profile) %></td> 
+   </tr>
+
+</table>
+
+				

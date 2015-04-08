@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
+
+  get 'categories/show'
+
+ # get 'profile/new'
+
 	root 'static_pages#index'
+
+  get '/profiles/new', to: 'profiles#new', as: 'new_profile'
+  post '/profiles', to: 'profiles#create'
+
+  get  '/profiles/:id', to: 'profiles#show', as: 'profile'
+  get  '/categories', to: 'categories#show', as: 'category'
+
+
+  get '/profiles/:id/edit', to: 'profiles#edit', as: 'edit_profile'
+  patch '/profiles/:id', to: 'profiles#update'
+  put '/profiles/:id', to: 'profiles#update'
+  
+    get 'quizzes/:id' => 'quizzes#show', as: 'quiz'
+    patch 'quizzes/:id' => 'quizzes#answer'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

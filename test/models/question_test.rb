@@ -15,6 +15,7 @@
 #  category_id    :integer
 #  quiz_id        :integer
 #  category       :string
+
 #
 
 require 'test_helper'

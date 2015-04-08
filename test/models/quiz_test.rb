@@ -19,6 +19,7 @@
 #  question4  :integer
 #  question5  :integer
 #  user       :integer
+
 #
 
 require 'test_helper'

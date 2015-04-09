@@ -54,4 +54,9 @@ class QuizzesController < ApplicationController
         
         redirect_to action: "show", id: params[:id]
     end
+
+		def createQuiz(category,level)
+				@quiz=Quiz.create()	
+		end
+
 end

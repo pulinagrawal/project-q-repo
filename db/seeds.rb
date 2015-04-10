@@ -20,27 +20,27 @@ math_questions = Question.create([
 ])
 
 history_questions = Question.create([
-	{category: history, level: 1, correct_answer: "George Washington", option1: "John Adams", option2: "George Washington", option3: "Andrew Jackson", option4: "Thomas Jefferson", question: "Who was the first President of the United States?"},
-	{category: history, level: 1, correct_answer: "The American Civil War", option1: "War of 1812", option2: "World War I", option3: "The American Civil War", option4: "The Revolutionary War ", question: "What war was fought on American soil from 1861 to 1865?"},
-	{category: history, level: 1, correct_answer: " Abraham Lincoln", option1: " Abraham Lincoln", option2: "Ulysses S. Grant", option3: "James Buchanan", option4: "Andrew Johnson", question: "Who was the 16th president of the US?"},
-	{category: history,level: 1, correct_answer: "The Democrats", option1: "The Democrats", option2: "The Federalists", option3: "The Progressives", option4: "The Independants", question: "Today in the United States government there are two major political parties.  The Republicians are one of the parties who is the other party?"},
-	{category: history, level: 1, correct_answer: "Franklin D. Roosevelt", option1: "Dwight Eisenhower", option2: "Franklin D. Roosevelt", option3: "Herbert Hoover", option4: "Harry Truman ", question: "Who was the president from 1933 to 1945,  the only president to serve more than 8 years in office?"}
+	{category_id: history.id, level: 1, correct_answer: "George Washington", option1: "John Adams", option2: "George Washington", option3: "Andrew Jackson", option4: "Thomas Jefferson", question: "Who was the first President of the United States?"},
+	{category_id: history.id, level: 1, correct_answer: "The American Civil War", option1: "War of 1812", option2: "World War I", option3: "The American Civil War", option4: "The Revolutionary War ", question: "What war was fought on American soil from 1861 to 1865?"},
+	{category_id: history.id, level: 1, correct_answer: " Abraham Lincoln", option1: " Abraham Lincoln", option2: "Ulysses S. Grant", option3: "James Buchanan", option4: "Andrew Johnson", question: "Who was the 16th president of the US?"},
+	{category_id: history.id, level: 1, correct_answer: "The Democrats", option1: "The Democrats", option2: "The Federalists", option3: "The Progressives", option4: "The Independants", question: "Today in the United States government there are two major political parties.  The Republicians are one of the parties who is the other party?"},
+	{category_id: history.id, level: 1, correct_answer: "Franklin D. Roosevelt", option1: "Dwight Eisenhower", option2: "Franklin D. Roosevelt", option3: "Herbert Hoover", option4: "Harry Truman ", question: "Who was the president from 1933 to 1945,  the only president to serve more than 8 years in office?"}
 ])
 
 sport_questions = Question.create([
-	{ category: sport, level: 1, correct_answer: "Stumped", option1: "Stumped", option2: "DDLJ", option3: "Dil Se", option4: "Chak de India", question: "Tendulkar featured in which Bollywood film?"},
-	{ category: sport, level: 1, correct_answer: "Rawalpindi Express", option1: "Fast Tiger", option2: "Rawalpindi Express", option3: "Don", option4: "The Eagle", question: "What is Shoaib Akhtars nickname?"},
-	{ category: sport, level: 1, correct_answer: "Pakistan", option1: "UAE", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Against which team did Sachin play his last ODI?"},
-	{ category: sport, level: 1, correct_answer: "Pakistan", option1: "New Zealand", option2: "Australia", option3: "Bangladesh", option4: "Pakistan", question: "Against which team did Sachin Tendulkar make his test debut?"},
-	{ category: sport, level: 1, correct_answer: "2003", option1: "1999", option2: "1997", option3: "2004", option4: "2003", question: "When did Sachin receive the Wisden cricketer of the year award?"}
+	{ category_id: sport.id, level: 1, correct_answer: "Stumped", option1: "Stumped", option2: "DDLJ", option3: "Dil Se", option4: "Chak de India", question: "Tendulkar featured in which Bollywood film?"},
+	{ category_id: sport.id, level: 1, correct_answer: "Rawalpindi Express", option1: "Fast Tiger", option2: "Rawalpindi Express", option3: "Don", option4: "The Eagle", question: "What is Shoaib Akhtars nickname?"},
+	{ category_id: sport.id, level: 1, correct_answer: "Pakistan", option1: "UAE", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Against which team did Sachin play his last ODI?"},
+	{ category_id: sport.id, level: 1, correct_answer: "Pakistan", option1: "New Zealand", option2: "Australia", option3: "Bangladesh", option4: "Pakistan", question: "Against which team did Sachin Tendulkar make his test debut?"},
+	{ category_id: sport.id, level: 1, correct_answer: "2003", option1: "1999", option2: "1997", option3: "2004", option4: "2003", question: "When did Sachin receive the Wisden cricketer of the year award?"}
 ])
 
 geography_questions = Question.create([
-	{ category: geography, level: 1, correct_answer: "Beijing", option1: "Khartoum", option2: "Beijing", option3: "Ottawa", option4: "Panama City", question: "What is the capital of China?"},
-	{ category: geography, level: 1, correct_answer: "New Delhi", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "New Delhi", question: "What is the capital of India?"},
-	{ category: geography, level: 1, correct_answer: "Washington DC", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Washington DC", question: "What is the capital of United States of America?"},
-	{ category: geography, level: 1, correct_answer: "Islamabad", option1: "karachi", option2: "Lahore", option3: "Islamabad", option4: "Hydrabad", question: "What is the capital of Pakistan?"},
-	{ category: geography, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"}
+	{ category_id: geography.id, level: 1, correct_answer: "Beijing", option1: "Khartoum", option2: "Beijing", option3: "Ottawa", option4: "Panama City", question: "What is the capital of China?"},
+	{ category_id: geography.id, level: 1, correct_answer: "New Delhi", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "New Delhi", question: "What is the capital of India?"},
+	{ category_id: geography.id, level: 1, correct_answer: "Washington DC", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Washington DC", question: "What is the capital of United States of America?"},
+	{ category_id: geography.id, level: 1, correct_answer: "Islamabad", option1: "karachi", option2: "Lahore", option3: "Islamabad", option4: "Hydrabad", question: "What is the capital of Pakistan?"},
+	{ category_id: geography.id, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"}
 ])
 Quiz.create({
     user: mo,

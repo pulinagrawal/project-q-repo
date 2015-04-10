@@ -12,11 +12,11 @@ geography = Category.create({category_name: "Geography"})
 sport = Category.create({category_name: "Sport"})
 
 math_questions = Question.create([
-    { category: math, level: 1, correct_answer: "11", option1: "11", option2: "2", option3: "3", option4: "4", question: "What is 10 + 1?"  },
-    { category: math, level: 1, correct_answer: "1300", option1: "13000", option2: "13", option3: "130", option4: "1300", question: "What is 100 * 13?"  },
-    { category: math, level: 1, correct_answer: "16", option1: "14", option2: "144", option3: "1", option4: "16", question: "What is (12 / 3) * 4?" },
-    { category: math, level: 1, correct_answer: "1", option1: "5", option2: "2", option3: "1", option4: "16", question: "What is 12 / (3 * 4)?"  },
-    { category: math, level: 1, correct_answer: "50", option1: "25", option2: "50", option3: "100", option4: "150", question: "What is 0.5 * 100?" }
+    { category_id: math.id, level: 1, correct_answer: "11", option1: "11", option2: "2", option3: "3", option4: "4", question: "What is 10 + 1?"  },
+    { category_id: math.id, level: 1, correct_answer: "1300", option1: "13000", option2: "13", option3: "130", option4: "1300", question: "What is 100 * 13?"  },
+    { category_id: math.id, level: 1, correct_answer: "16", option1: "14", option2: "144", option3: "1", option4: "16", question: "What is (12 / 3) * 4?" },
+    { category_id: math.id, level: 1, correct_answer: "1", option1: "5", option2: "2", option3: "1", option4: "16", question: "What is 12 / (3 * 4)?"  },
+    { category_id: math.id, level: 1, correct_answer: "50", option1: "25", option2: "50", option3: "100", option4: "150", question: "What is 0.5 * 100?" }
 ])
 
 history_questions = Question.create([

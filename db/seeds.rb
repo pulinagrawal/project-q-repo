@@ -6,7 +6,7 @@ Pulin = Profile.create({first_name: 'Pulin', last_name: 'Agrawal', birthday: Dat
 Soujanya = Profile.create({first_name: 'Soujanya', last_name: 'Chatterjee', birthday: Date.new(1989,1,1), password: "password", email: "schttrj1@memphis.edu", reward_amount: 0})
 Tadael = Profile.create({first_name: 'Tadael', last_name: 'Fekede', birthday: Date.new(1989,1,1), password: "password", email: "tadaelkoye@gmail.com", reward_amount: 0})
 
-math = Category.create({category_name: "Math"})
+math = Category.create({category_name: "Mathematics"})
 history = Category.create({category_name: "History"})
 geography = Category.create({category_name: "Geography"})
 sport = Category.create({category_name: "Sport"})
@@ -43,7 +43,7 @@ geography_questions = Question.create([
 	{ category: geography, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"}
 ])
 Quiz.create({
-    user: mo,
+    username: mo,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
     question1: math_questions[0], correct1: true,
@@ -54,7 +54,7 @@ Quiz.create({
 })
 
 Quiz.create({
-    user: mo,
+    username: mo,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
     question1: history_questions[0], correct1: true,
@@ -65,7 +65,7 @@ Quiz.create({
 })
 
 Quiz.create({
-    user: mo,
+    username: mo,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
     question1: geography_questions[0], correct1: true,

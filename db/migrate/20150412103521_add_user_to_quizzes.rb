@@ -1,5 +1,5 @@
 class AddUserToQuizzes < ActiveRecord::Migration
   def change
-    add_column :quizzes, :user, :integer
+    add_column :quizzes, :username, :string
   end
 end

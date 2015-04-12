@@ -19,6 +19,8 @@
 #  question4  :integer
 #  question5  :integer
 #  user       :integer
+#  username   :string
+#
 
 #
 

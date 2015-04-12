@@ -14,5 +14,19 @@
 #
 
 class Profile < ActiveRecord::Base
-	has_many :quizzes
+	
+	has_secure_password
+    has_many :quizzes
+
+
+    validates :password, length: { minimum: 6 }, allow_nil: true
+	before_save { |profile| profile.email = email.downcase }
+    before_save :create_remember_token
+
+ private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
+
 end

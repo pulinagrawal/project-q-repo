@@ -10,8 +10,8 @@
     <div class="col col-lg-3">
       <div class="row">
         <p class="bs-component">
-	  <a href="#" class="btn btn-info btn-block">Sign Up</a>
-	</p>
+	      <%=link_to "Sign Up", new_profile_path, class: "btn btn-info btn-block" %>
+	    </p>
       </div>
       <div class="row">
         <div class="tab-pane panel-primary">
@@ -20,7 +20,61 @@
           </div>
           <div class="panel-body">
             <div class="form">
-              <form class="form-horizontal">
+
+        <%= render :file => '/app/views/sessions/new.html.erb' %> 
+
+<!--<%= form_for(@profile,:html => {:class => "form-horizontal" }) do |f| %>
+      
+
+         <% if @profile.errors.any? %>
+               <div id="error_explanation">
+                 <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+                 <ul>
+                   <% @profile.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                   <% end %>
+                </ul>
+              </div>
+                <% end %> 
+
+                    <div class="form-group">
+                          <%= f.label :email, :class => "col-md-2 control-label" %>
+                          <div class="col-md-10">
+                              <%= f.text_field :email, placeholder: "Email XXXX@XXX.XXX", :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}'  ,:class => "form-control" %>
+                          </div> 
+                     </div> 
+
+                    <div class="form-group">
+                          <%= f.label :password , :class => "col-md-2 control-label"%>
+                          <div class="col-md-10">
+                          <%= password_field_tag(:password, "", placeholder: "Password", :required => true, :class => "form-control") %>
+                          </div> 
+                     </div>
+
+                   
+                      <div class="form-group">
+                            <%= f.submit "Sign In", :class => "btn btn-primary" %>
+                    </div>
+
+          
+
+      <% end %> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!--    <form class="form-horizontal">
                 <fieldset>
 	          <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email/Username</label>
@@ -46,7 +100,7 @@
                     </div>
                   </div>
                 </fieldset>
-              </form>
+              </form>-->
 	    </div>
           </div>
         </div>

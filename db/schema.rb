@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408143610) do
+ActiveRecord::Schema.define(version: 20150412091927) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -23,12 +23,15 @@ ActiveRecord::Schema.define(version: 20150408143610) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthday"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "email"
     t.integer  "reward_amount"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "remember_token"
   end
+
+  add_index "profiles", ["remember_token"], name: "index_profiles_on_remember_token"
 
   create_table "questions", force: :cascade do |t|
     t.integer  "level"

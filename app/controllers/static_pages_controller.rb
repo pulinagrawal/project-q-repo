@@ -7,5 +7,6 @@ class StaticPagesController < ApplicationController
 	end
 
 	def index
+		@profile = Profile.new
 	end
 end

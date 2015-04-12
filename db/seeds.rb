@@ -1,10 +1,10 @@
 
 
-mo = Profile.create({ first_name: 'Mohammad', last_name: 'Shamim', birthday: Date.new(1989,1,1), password: "password", email: "mfshamim@memphis.edu", reward_amount: 0})
-Craig = Profile.create({first_name: 'Craig', last_name: 'Kelly', birthday: Date.new(1989,1,1), password: "password", email: "cnkelly@memphis.edu", reward_amount: 0})
-Pulin = Profile.create({first_name: 'Pulin', last_name: 'Agrawal', birthday: Date.new(1989,1,1), password: "password", email: "pagrawal@memphis.edu", reward_amount: 0})
-Soujanya = Profile.create({first_name: 'Soujanya', last_name: 'Chatterjee', birthday: Date.new(1989,1,1), password: "password", email: "schttrj1@memphis.edu", reward_amount: 0})
-Tadael = Profile.create({first_name: 'Tadael', last_name: 'Fekede', birthday: Date.new(1989,1,1), password: "password", email: "tadaelkoye@gmail.com", reward_amount: 0})
+mo = Profile.create({ first_name: 'Mohammad', last_name: 'Shamim', birthday: Date.new(1989,1,1), password_digest: "password", email: "mfshamim@memphis.edu", reward_amount: 0})
+Craig = Profile.create({first_name: 'Craig', last_name: 'Kelly', birthday: Date.new(1989,1,1), password_digest: "password", email: "cnkelly@memphis.edu", reward_amount: 0})
+Pulin = Profile.create({first_name: 'Pulin', last_name: 'Agrawal', birthday: Date.new(1989,1,1), password_digest: "password", email: "pagrawal@memphis.edu", reward_amount: 0})
+Soujanya = Profile.create({first_name: 'Soujanya', last_name: 'Chatterjee', birthday: Date.new(1989,1,1), password_digest: "password", email: "schttrj1@memphis.edu", reward_amount: 0})
+Tadael = Profile.create({first_name: 'Tadael', last_name: 'Fekede', birthday: Date.new(1989,1,1), password_digest: "password", email: "tadaelkoye@gmail.com", reward_amount: 0})
 
 math = Category.create({category_name: "Mathematics"})
 history = Category.create({category_name: "History"})

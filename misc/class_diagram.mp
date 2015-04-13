@@ -3,57 +3,68 @@ input metauml;
 %Class diagram
 %"+" for public, "#" for protected and "−" for private
 beginfig(1);
-    Class.Part(
-        "Part"
+    Class.Category(
+        "Category"
     ) (
-        "+PartNumber:string",
-        "+Condition:string",
-        "+Qty:int",
-        "#TranState:tsenum",
-        "-PrivateInfo:int"
+        "category_name: string"
     ) (
-        "+sell(price:decimal, qty:int):bool",
-        "+forecast(qty:int):int",
-        "#toString():string",
-        "-calcPrivateStuff():void"
+    );
+    
+    Class.Profile(
+        "Profile"
+    ) (
+        "first_name: string",
+        "last_name: string",
+        "birthday: date",
+        "password: string",
+        "email: string",
+        "reward_amount: integer"
+        
+    ) (
+    );
+    
+    Class.Question(
+        "Question"
+    ) (
+        "level: integer",
+        "correct_answer: string",
+        "option1: string",
+        "option2: string",
+        "option3: string",
+        "option4: string",
+        "question: string",
+        "category_id: integer"
+    ) (
+    );
+    
+    Class.Quiz(
+        "Quiz"
+    ) (
+        "profile_id: integer",
+        "end_date: date",
+        "start_date: date",
+        "correct1: boolean",
+        "correct2: boolean",
+        "correct3: boolean",
+        "correct4: boolean",
+        "correct5: boolean",
+        "question1: integer",
+        "question2: integer",
+        "question3: integer",
+        "question4: integer",
+        "question5: integer"
+    ) (
     );
 
-    classStereotypes.Part("<<Object>>");
-
-    Class.ILSPart("ILSPart")("+ILSQty:int")("+CheckILS():void");
-
-    classStereotypes.ILSPart("<<Object>>", "<<Part>>");
-
-    leftToRight(30)(Part, ILSPart);
+    %classStereotypes.Part("<<Object>>");
+    %classStereotypes.ILSPart("<<Object>>", "<<Part>>");
     
-    drawObjects(Part, ILSPart);
+    leftToRight(30)(Category, Profile, Question, Quiz);
+    
+    drawObjects(Category, Profile, Question, Quiz);
 
-    clink(inheritance)(ILSPart, Part);
+    %clink(inheritance)(ILSPart, Part);
 endfig;
 
-%Use Case Diagram
-beginfig(2);
-    Actor.user("User");
-    Actor.dba("Database Admin");
-
-    Usecase.dbquery("Query database");
-    Usecase.auth("Authentification");
-
-    Usecase.authA("Authentification by", "username, password");
-    Usecase.authB("Authentification by", "smartcard");
-
-    topToBottom(30)(dba.human, user.human);
-    leftToRight(30)(dba.human, dbquery);
-    leftToRight(30)(user.human, auth, authA);
-    topToBottom(30)(authA, authB);
-
-    drawObjects(dba, dbquery, authA, user, auth, authB);
-
-    clink(inheritance)(authA, auth);
-    clink(inheritance)(authB, auth);
-    clink(associationUni)(auth, dbquery);
-    clink(associationUni)(user.human, auth);
-    clink(associationUni)(dba.human, dbquery);
-endfig;
 
 end

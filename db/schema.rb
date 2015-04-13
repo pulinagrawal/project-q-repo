@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150412103521) do
     t.integer  "question3"
     t.integer  "question4"
     t.integer  "question5"
+    t.integer  "user"
     t.string   "username"
   end
 

@@ -39,13 +39,8 @@ class QuizTest < ActiveSupport::TestCase
     assert @quiz.valid?
   end
 
-  test "Start date must be in between Jan 1,2015 and current date" do
+  test "Start date must be in between Jan 1,1890 and current date" do
    	@quiz.start_date=Date.new(1777,1,1)
-    assert_not @quiz.valid?
-  end
-
-   test "End date must be in between Jan 1,2015 and current date" do
-   	@quiz.end_date=Date.new(1777,1,1)
     assert_not @quiz.valid?
   end
 

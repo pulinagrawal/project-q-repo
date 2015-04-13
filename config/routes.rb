@@ -21,8 +21,6 @@ Rails.application.routes.draw do
   get 'quizzes/new', to: 'quizzes#new', as: 'newquiz'
   get 'quizzes/:id' => 'quizzes#show', as: 'quiz'
   patch 'quizzes/:id' => 'quizzes#answer'
-  get 'quizzes/results/:id' => 'quizzes#results'
-
   get 'quizzes/:id/result' => 'quizzes#result', as: 'quiz_result'
 
   # The priority is based upon order of creation: first created -> highest priority.

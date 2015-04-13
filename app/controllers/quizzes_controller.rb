@@ -48,8 +48,16 @@ class QuizzesController < ApplicationController
     end
 
     def quiz_score
-        #TODO: return score for current quiz
-        return 42
+        count = 0
+        score = 0
+        points = 1
+        1.upto(5).each do |idx|
+            if @quiz["correct#{idx}"]
+                score += points
+                points *= 2
+            end
+        end
+        return score
     end
 
     def show
@@ -59,7 +67,7 @@ class QuizzesController < ApplicationController
         if @quiz_done
             # Quiz is completed: redirect to results
             session[:last_answer] = ""
-            redirect_to action: "results", id: params[:id]
+            redirect_to action: "result", id: params[:id]
             return
         end
 
@@ -98,7 +106,7 @@ class QuizzesController < ApplicationController
 
         #Update quiz with results
         @quiz["correct#{@current_question_num}"] = correct
-        @quiz.save()
+        @quiz.save
 
         # If we just finished, score and record what just happenend... otherwise
         # we just redirect to diplay the quiz so the next question can be
@@ -106,22 +114,23 @@ class QuizzesController < ApplicationController
         if @current_question_num == 5
             #Just finished quiz - we need to calculate the score
             qs = quiz_score
-            logger.debug "User #{@quiz.profile_id} score is getting updated vt #{qs}"
+            logger.debug "User #{@quiz.profile_id} score is inc'ed by #{qs}"
 
             user = Profile.find(@quiz.profile_id)
             if user.reward_amount.blank?
                 user.reward_amount = 0
             end
             user.reward_amount += qs
-            user.save()
+            user.save!
+            logger.debug user.to_json
 
-            redirect_to action: "results", id: params[:id]
+            redirect_to action: "result", id: params[:id]
         else
             redirect_to action: "show", id: params[:id]
         end
     end
 
-    def results
+    def result
         session[:last_answer] = ""
         @quiz = Quiz.find(params[:id])
         deduce_quiz_state
@@ -131,6 +140,8 @@ class QuizzesController < ApplicationController
             redirect_to action: "show", id: params[:id]
             return
         end
+        
+        @quiz_score = quiz_score
     end
 
 
@@ -169,10 +180,4 @@ class QuizzesController < ApplicationController
 				)
 		redirect_to quiz_url(@nwquiz.id)
 	end
-
-
-def result
-   @quiz = Quiz.find(params[:id]) 
-end
-
 end

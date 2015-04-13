@@ -26,7 +26,6 @@ class Quiz < ActiveRecord::Base
 	belongs_to :profile
 	has_many :questions
 
-    validates_inclusion_of :end_date, :in => Date.new(1890,1,1)..Date.current
     validates_inclusion_of :start_date, :in => Date.new(1890,1,1)..Date.current, presence:true
 end
 

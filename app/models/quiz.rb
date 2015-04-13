@@ -32,7 +32,5 @@ class Quiz < ActiveRecord::Base
     validates :correct3, inclusion: { in: [true, false, nil] }
     validates :correct4, inclusion: { in: [true, false, nil] }
     validates :correct5, inclusion: { in: [true, false, nil] }
-    validates_inclusion_of :end_date, :in => Date.new(1890,1,1)..Date.current
-    validates_inclusion_of :start_date, :in => Date.new(1890,1,1)..Date.current, presence:true    
     
 end

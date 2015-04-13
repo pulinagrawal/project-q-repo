@@ -94,12 +94,13 @@ class QuizzesController < ApplicationController
 
 	def index
 		@profile=Profile.find(1)		
-		@quizzes=Quiz.where(profile_id: profile.id)
-		@completed=Array.new()
-		@incomplete=Array.new()
-		#@quizzes.each do |q| 
-		#	if q.end_date!=nil then
-		#		@completed
+		@quizzes=Quiz.where(profile_id: @profile.id)
+		@categories=Category.all
+		@done=Array.new(@categories.count,0)
+		@quizzes.each { |q|
+			@nq=Question.find(q.question1)	
+			@done[@nq.category_id-1]=@done[@nq.category_id-1]+1
+		}
 	end
 
 end

@@ -37,6 +37,21 @@ class QuizzesController < ApplicationController
         end
     end
 
+    def quiz_correct_count
+        count = 0
+        1.up(5).each do |idx|
+            if @quiz["correct#{idx}"]
+                count += 1
+            end
+        end
+        return count
+    end
+
+    def quiz_score
+        #TODO: return score for current quiz
+        return 42
+    end
+
     def show
         @quiz = Quiz.find(params[:id])
         deduce_quiz_state
@@ -85,7 +100,37 @@ class QuizzesController < ApplicationController
         @quiz["correct#{@current_question_num}"] = correct
         @quiz.save()
 
-        redirect_to action: "show", id: params[:id]
+        # If we just finished, score and record what just happenend... otherwise
+        # we just redirect to diplay the quiz so the next question can be
+        # displayed
+        if @current_question_num == 5
+            #Just finished quiz - we need to calculate the score
+            qs = quiz_score
+            logger.debug "User #{@quiz.profile_id} score is getting updated vt #{qs}"
+
+            user = Profile.find(@quiz.profile_id)
+            if user.reward_amount.blank?
+                user.reward_amount = 0
+            end
+            user.reward_amount += qs
+            user.save()
+
+            redirect_to action: "results", id: params[:id]
+        else
+            redirect_to action: "show", id: params[:id]
+        end
+    end
+
+    def results
+        session[:last_answer] = ""
+        @quiz = Quiz.find(params[:id])
+        deduce_quiz_state
+
+        if not @quiz_done
+            # Whoops - they aren't done yet
+            redirect_to action: "show", id: params[:id]
+            return
+        end
     end
 
 

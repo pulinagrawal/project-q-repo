@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   put '/profiles/:id', to: 'profiles#update'
   
   get 'quizzes/new', to: 'quizzes#new', as: 'newquiz'
+  get 'quizzes/index', to: 'quizzes#index', as:'index'
   get 'quizzes/:id' => 'quizzes#show', as: 'quiz'
   patch 'quizzes/:id' => 'quizzes#answer'
 

@@ -114,7 +114,7 @@ class QuizzesController < ApplicationController
 	 	@questions=Question.where(category_id:params[:category], level: Integer(params[:level])).take(5)
 
 		#need to change Profile.find with profile in session
-		@nwquiz=Quiz.create(user: Profile.find(1),
+		@nwquiz=Quiz.create(profile_id: Profile.find(1).id,
 				 start_date: Date.current,
 				 question1: @questions[0].id,
 				 question2: @questions[1].id,
@@ -125,6 +125,16 @@ class QuizzesController < ApplicationController
 		redirect_to quiz_url(@nwquiz.id)
 	end
 
+	def index
+		@profile=Profile.find(1)		
+		@quizzes=Quiz.where(profile_id: @profile.id)
+		@categories=Category.all
+		@done=Array.new(@categories.count,0)
+		@quizzes.each { |q|
+			@nq=Question.find(q.question1)	
+			@done[@nq.category_id-1]=@done[@nq.category_id-1]+1
+		}
+	end
 
 def result
    @quiz = Quiz.find(params[:id]) 

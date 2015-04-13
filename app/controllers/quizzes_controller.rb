@@ -171,6 +171,21 @@ class QuizzesController < ApplicationController
 		redirect_to quiz_url(@nwquiz.id)
 	end
 
+
+
+    def result
+        @quiz = Quiz.find(params[:id]) 
+    end
+
+    def destroy
+        @quiz = Quiz.find(params[:id])
+        @quiz.destroy
+        respond_to do |format|
+            format.html { redirect_to category_url }
+        end
+    end
+
+
 	def index
 		@profile=Profile.find(1)		
 		@quizzes=Quiz.where(profile_id: @profile.id)
@@ -201,4 +216,6 @@ class QuizzesController < ApplicationController
             @peer_percent = 0
         end
 	end
+
 end
+

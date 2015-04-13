@@ -37,12 +37,18 @@
                     role="alert">
                     <%= @last_answer %>
                 </div>
-            <% end %>
-
+            <% end %>                
 
         <% end %>
     </div>
     <div class="col-md-4">
         You are on Question <%=@current_question_num%> of 5
     </div>
+
+    <div class="col-md-4">
+                    
+                    [<%= link_to "DELETE", quiz_path(@quiz.id), method: :delete%>]
+                    
+                </div>
+
 </div>

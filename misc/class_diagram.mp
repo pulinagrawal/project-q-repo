@@ -55,15 +55,28 @@ beginfig(1);
         "question5: integer"
     ) (
     );
-
-    %classStereotypes.Part("<<Object>>");
-    %classStereotypes.ILSPart("<<Object>>", "<<Part>>");
     
-    leftToRight(30)(Category, Profile, Question, Quiz);
+    Profile.w = Category.e + (100, 0);
+    Question.n = Category.s - (0, 200);
+    Quiz.midy = Question.midy;
+    Quiz.midx = Profile.midx;
     
     drawObjects(Category, Profile, Question, Quiz);
-
-    %clink(inheritance)(ILSPart, Part);
+    
+    clink(association)(Category, Question);
+    item(iAssoc)("belongs to")(obj.w = .5[Category.s, Question.n]);
+    item(iAssoc)("1")(obj.ne = Category.s);
+    item(iAssoc)("0..*")(obj.se = Question.n);
+    
+    clink(association)(Question, Quiz);
+    item(iAssoc)("displayed by")(obj.n = .5[Question.e, Quiz.w]);
+    item(iAssoc)("0..5")(obj.sw = Question.e);
+    item(iAssoc)("1")(obj.se = Quiz.w);
+    
+    clink(association)(Quiz, Profile);
+    item(iAssoc)("shown to")(obj.w = .5[Profile.s, Quiz.n]);
+    item(iAssoc)("1")(obj.ne = Profile.s);
+    item(iAssoc)("0..*")(obj.se = Quiz.n);
 endfig;
 
 

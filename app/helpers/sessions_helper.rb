@@ -12,4 +12,9 @@ module SessionsHelper
     @current_profile ||= Profile.find_by_remember_token(cookies[:remember_token])
   end
 
+  def sign_out
+    self.current_profile = nil
+    cookies.delete(:remember_token)
+  end
+
 end

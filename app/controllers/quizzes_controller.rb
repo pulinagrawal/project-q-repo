@@ -44,7 +44,7 @@ class QuizzesController < ApplicationController
         if @quiz_done
             # Quiz is completed: redirect to results
             session[:last_answer] = ""
-            redirect_to action: "results", id: params[:id]
+            redirect_to action: "result", id: params[:id]
             return
         end
 
@@ -126,8 +126,17 @@ class QuizzesController < ApplicationController
 	end
 
 
-def result
-   @quiz = Quiz.find(params[:id]) 
-end
+    def result
+        @quiz = Quiz.find(params[:id]) 
+    end
+
+    def destroy
+        @quiz = Quiz.find(params[:id])
+        @quiz.destroy
+        respond_to do |format|
+            format.html { redirect_to category_url }
+        end
+    end
 
 end
+

@@ -37,16 +37,6 @@ class QuizzesController < ApplicationController
         end
     end
 
-    def quiz_correct_count
-        count = 0
-        1.up(5).each do |idx|
-            if @quiz["correct#{idx}"]
-                count += 1
-            end
-        end
-        return count
-    end
-
     def quiz_score
         count = 0
         score = 0
@@ -190,5 +180,25 @@ class QuizzesController < ApplicationController
 			@nq=Question.find(q.question1)	
 			@done[@nq.category_id-1]=@done[@nq.category_id-1]+1
 		}
+        
+        startd = @profile.birthday + -365
+        endd = @profile.birthday + 365
+        peer_total = 0.0
+        peer_correct = 0.0
+        Profile.where("birthday between ? and ?", startd, endd).each do |peer|
+            Quiz.where(profile_id: peer.id).each do |pq|
+                peer_total += 5.0
+                1.upto(5).each do |idx|
+                    if pq["correct#{idx}"] then
+                        peer_correct += 1.0
+                    end
+                end
+            end
+        end
+        if peer_total > 0.0
+            @peer_percent = peer_correct / peer_total
+        else
+            @peer_percent = 0
+        end
 	end
 end

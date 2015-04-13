@@ -120,21 +120,6 @@ class QuizzesController < ApplicationController
         end
     end
 
-    def result
-        session[:last_answer] = ""
-        @quiz = Quiz.find(params[:id])
-        deduce_quiz_state
-
-        if not @quiz_done
-            # Whoops - they aren't done yet
-            redirect_to action: "show", id: params[:id]
-            return
-        end
-        
-        @quiz_score = quiz_score
-    end
-
-
 	def create_quiz(request_category,request_level,requesting_user)
 		#num_questions=Question.where(category: category).last.id
 		#Question.where(id: [(1..num_questions].sample(5))
@@ -171,10 +156,18 @@ class QuizzesController < ApplicationController
 		redirect_to quiz_url(@nwquiz.id)
 	end
 
-
-
     def result
-        @quiz = Quiz.find(params[:id]) 
+        session[:last_answer] = ""
+        @quiz = Quiz.find(params[:id])
+        deduce_quiz_state
+
+        if not @quiz_done
+            # Whoops - they aren't done yet
+            redirect_to action: "show", id: params[:id]
+            return
+        end
+        
+        @quiz_score = quiz_score
     end
 
     def destroy
@@ -218,4 +211,3 @@ class QuizzesController < ApplicationController
 	end
 
 end
-

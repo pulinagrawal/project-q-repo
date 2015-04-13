@@ -92,4 +92,14 @@ class QuizzesController < ApplicationController
 		redirect_to quiz_url(@nwquiz.id)
 	end
 
+	def index
+		@profile=Profile.find(1)		
+		@quizzes=Quiz.where(profile_id: profile.id)
+		@completed=Array.new()
+		@incomplete=Array.new()
+		#@quizzes.each do |q| 
+		#	if q.end_date!=nil then
+		#		@completed
+	end
+
 end

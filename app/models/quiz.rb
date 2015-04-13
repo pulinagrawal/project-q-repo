@@ -28,10 +28,9 @@ class Quiz < ActiveRecord::Base
 
     validates_inclusion_of :end_date, :in => Date.new(1890,1,1)..Date.current, presence:true
     validates_inclusion_of :start_date, :in => Date.new(1890,1,1)..Date.current, presence:true
-    validates :correct1, inclusion: { in: [true, nil] }
-    validates :correct2, inclusion: { in: [false, nil] }
-    validates :correct3, inclusion: { in: [true, false] }
-    validates :correct4, exclusion: { in: [true, nil] }
-    validates :correct5, exclusion: { in: [nil] }
+    validates :correct1, inclusion: { in: [true, false, nil] }
+    validates :correct2, inclusion: { in: [true, false, nil] }
+    validates :correct3, inclusion: { in: [true, false, nil] }
+    validates :correct4, inclusion: { in: [true, false, nil] }
+    validates :correct5, inclusion: { in: [true, false, nil] }
 end
-

@@ -42,8 +42,10 @@ geography_questions = Question.create([
 	{ category_id: geography.id, level: 1, correct_answer: "Islamabad", option1: "karachi", option2: "Lahore", option3: "Islamabad", option4: "Hydrabad", question: "What is the capital of Pakistan?"},
 	{ category_id: geography.id, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"}
 ])
-Quiz.create({
-    username: mo,
+
+Quiz.create!({
+    id: 1,
+    profile_id: mo.id,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
     question1: math_questions[0].id, correct1: true,
@@ -53,8 +55,8 @@ Quiz.create({
     question5: math_questions[4].id, correct5: nil,
 })
 
-Quiz.create({
-    username: mo,
+Quiz.create!({
+    profile_id: mo.id,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
     question1: history_questions[0].id, correct1: true,
@@ -64,8 +66,8 @@ Quiz.create({
     question5: history_questions[4].id, correct5: nil,
 })
 
-Quiz.create({
-    username: mo,
+Quiz.create!({
+    profile_id: mo.id,
     start_date: Date.new(1989,1,1),
     end_date: Date.new(1989,1,1),
     question1: geography_questions[0].id, correct1: true,

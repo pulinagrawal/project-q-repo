@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'quizzes/:id' => 'quizzes#show', as: 'quiz'
   patch 'quizzes/:id' => 'quizzes#answer'
 
+  get 'quizzes/:id/result' => 'quizzes#result', as: 'quiz_result'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

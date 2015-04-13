@@ -37,6 +37,29 @@ class QuizzesController < ApplicationController
         end
     end
 
+    def quiz_correct_count
+        count = 0
+        1.up(5).each do |idx|
+            if @quiz["correct#{idx}"]
+                count += 1
+            end
+        end
+        return count
+    end
+
+    def quiz_score
+        count = 0
+        score = 0
+        points = 1
+        1.upto(5).each do |idx|
+            if @quiz["correct#{idx}"]
+                score += points
+                points *= 2
+            end
+        end
+        return score
+    end
+
     def show
         @quiz = Quiz.find(params[:id])
         deduce_quiz_state
@@ -83,9 +106,42 @@ class QuizzesController < ApplicationController
 
         #Update quiz with results
         @quiz["correct#{@current_question_num}"] = correct
-        @quiz.save()
+        @quiz.save
 
-        redirect_to action: "show", id: params[:id]
+        # If we just finished, score and record what just happenend... otherwise
+        # we just redirect to diplay the quiz so the next question can be
+        # displayed
+        if @current_question_num == 5
+            #Just finished quiz - we need to calculate the score
+            qs = quiz_score
+            logger.debug "User #{@quiz.profile_id} score is inc'ed by #{qs}"
+
+            user = Profile.find(@quiz.profile_id)
+            if user.reward_amount.blank?
+                user.reward_amount = 0
+            end
+            user.reward_amount += qs
+            user.save!
+            logger.debug user.to_json
+
+            redirect_to action: "result", id: params[:id]
+        else
+            redirect_to action: "show", id: params[:id]
+        end
+    end
+
+    def result
+        session[:last_answer] = ""
+        @quiz = Quiz.find(params[:id])
+        deduce_quiz_state
+
+        if not @quiz_done
+            # Whoops - they aren't done yet
+            redirect_to action: "show", id: params[:id]
+            return
+        end
+        
+        @quiz_score = quiz_score
     end
 
 
@@ -114,7 +170,7 @@ class QuizzesController < ApplicationController
 	 	@questions=Question.where(category_id:params[:category], level: Integer(params[:level])).take(5)
 
 		#need to change Profile.find with profile in session
-		@nwquiz=Quiz.create(user: Profile.find(1),
+		@nwquiz=Quiz.create(profile_id: Profile.find(1).id,
 				 start_date: Date.current,
 				 question1: @questions[0].id,
 				 question2: @questions[1].id,
@@ -124,6 +180,7 @@ class QuizzesController < ApplicationController
 				)
 		redirect_to quiz_url(@nwquiz.id)
 	end
+
 
 
     def result
@@ -137,6 +194,18 @@ class QuizzesController < ApplicationController
             format.html { redirect_to category_url }
         end
     end
+
+
+	def index
+		@profile=Profile.find(1)		
+		@quizzes=Quiz.where(profile_id: @profile.id)
+		@categories=Category.all
+		@done=Array.new(@categories.count,0)
+		@quizzes.each { |q|
+			@nq=Question.find(q.question1)	
+			@done[@nq.category_id-1]=@done[@nq.category_id-1]+1
+		}
+	end
 
 end
 

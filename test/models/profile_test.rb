@@ -95,8 +95,8 @@ class ProfileTest < ActiveSupport::TestCase
     assert_not @profile.valid?
   end
 
-  test "Reward amount should have a maximum value is 15 " do
-    @profile.reward_amount = 20
+  test "Reward amount should not be negative " do
+    @profile.reward_amount = -1
     assert_not @profile.valid?
   end
 

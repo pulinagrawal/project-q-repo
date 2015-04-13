@@ -35,42 +35,37 @@ class QuizTest < ActiveSupport::TestCase
     correct3: true, correct4: nil, correct5: nil)
   end
 
-    test "Quiz attributes should be valid" do
+  test "Quiz attributes should be valid" do
+    assert @quiz.valid?
+  end
+
+  test "Start date must be in between Jan 1,1890 and current date" do
+   	@quiz.start_date=Date.new(1777,1,1)
     assert_not @quiz.valid?
   end
 
-   test "Start date must be in between Jan 1,2015 and current date" do
-   	@quiz.start_date=Date.new(1777,1,1)       
-    assert_not @quiz.valid?
+  test "correct1 value should be True, False, or nil" do
+    @quiz.correct1 = true
+    assert @quiz.valid?
   end
 
-   test "End date must be in between Jan 1,2015 and current date" do
-   	@quiz.end_date=Date.new(1777,1,1)       
-    assert_not @quiz.valid?
+  test "correct2 value should be True, False, or nil" do
+    @quiz.correct2 = false
+    assert @quiz.valid?
   end
 
-   test "correct1 value should be True or nil" do
-    @quiz.correct1 = false
-    assert_not @quiz.valid?
-  end
-
-  test "correct2 value should be false or nil " do
-    @quiz.correct2 = true
-    assert_not @quiz.valid?
-  end
-
-  test "correct3 value should be true or false " do
+  test "correct3 value should be True, False, or nil" do
     @quiz.correct3 = nil
-    assert_not @quiz.valid?
+    assert @quiz.valid?
   end
 
-  test "correct4 value should be true or nil " do
-    @quiz.correct4 = false
-    assert_not @quiz.valid?
+  test "correct4 value should be True, False, or nil" do
+    @quiz.correct4 = true
+    assert @quiz.valid?
   end
 
-  test "correct5 value should be nil " do
+  test "correct5 value should be True, False, or nil" do
     @quiz.correct5 = false
-    assert_not @quiz.valid?
+    assert @quiz.valid?
   end
 end

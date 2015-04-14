@@ -9,20 +9,15 @@
 #
 
 class Category < ActiveRecord::Base
-	has_many :questions
+    has_many :questions
 
-	validates :category_name, presence:  true, length: { maximum: 30 }
+    validates :category_name, presence:  true, length: { maximum: 30 }
 
-	
-		  
-		def self.search(search)
-			  if search
-			    self.where("category_name like ?", "%#{search}%")
-			  else
-			   self.all
-			  end
-		end
-		  
-	
+    def self.search(search)
+        if search
+            self.where("category_name like ?", "%#{search}%")
+        else
+            self.all
+        end
+    end
 end
-

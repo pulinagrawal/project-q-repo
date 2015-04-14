@@ -120,41 +120,41 @@ class QuizzesController < ApplicationController
         end
     end
 
-	def create_quiz(request_category,request_level,requesting_user)
-		#num_questions=Question.where(category: category).last.id
-		#Question.where(id: [(1..num_questions].sample(5))
-	 	questions=Question.where(category: request_category, level: request_level).take(5)
-		@nwquiz.question1=questions[0];
-		@nwquiz.question2=questions[1];
-		@nwquiz.question3=questions[2];
-		@nwquiz.question4=questions[3];
-		@nwquiz.question5=questions[4];
+    def create_quiz(request_category,request_level,requesting_user)
+        #num_questions=Question.where(category: category).last.id
+        #Question.where(id: [(1..num_questions].sample(5))
+        questions=Question.where(category: request_category, level: request_level).take(5)
+        @nwquiz.question1=questions[0];
+        @nwquiz.question2=questions[1];
+        @nwquiz.question3=questions[2];
+        @nwquiz.question4=questions[3];
+        @nwquiz.question5=questions[4];
 
-	#	return Quiz.create({
-	#	user: requesting_user,
-	#	start_date: Date.current,
-	#	question1: questions[1],
-	#	question2: questions[2],
-	#	question3: questions[3],
-	#	question4: questions[4],
-	#	question5: questions[5]
-	#	})
-	end
+    #   return Quiz.create({
+    #   user: requesting_user,
+    #   start_date: Date.current,
+    #   question1: questions[1],
+    #   question2: questions[2],
+    #   question3: questions[3],
+    #   question4: questions[4],
+    #   question5: questions[5]
+    #   })
+    end
 
-	def new
-	 	@questions=Question.where(category_id:params[:category], level: Integer(params[:level])).take(5)
+    def new
+        @questions=Question.where(category_id:params[:category], level: Integer(params[:level])).take(5)
 
-		#need to change Profile.find with profile in session
-		@nwquiz=Quiz.create(profile_id: Profile.find(1).id,
-				 start_date: Date.current,
-				 question1: @questions[0].id,
-				 question2: @questions[1].id,
-				 question3: @questions[2].id,
-				 question4: @questions[3].id,
-				 question5: @questions[4].id
-				)
-		redirect_to quiz_url(@nwquiz.id)
-	end
+        #need to change Profile.find with profile in session
+        @nwquiz=Quiz.create(profile_id: Profile.find(1).id,
+                 start_date: Date.current,
+                 question1: @questions[0].id,
+                 question2: @questions[1].id,
+                 question3: @questions[2].id,
+                 question4: @questions[3].id,
+                 question5: @questions[4].id
+                )
+        redirect_to quiz_url(@nwquiz.id)
+    end
 
     def result
         session[:last_answer] = ""
@@ -166,7 +166,7 @@ class QuizzesController < ApplicationController
             redirect_to action: "show", id: params[:id]
             return
         end
-        
+
         @quiz_score = quiz_score
     end
 
@@ -179,16 +179,16 @@ class QuizzesController < ApplicationController
     end
 
 
-	def index
-		@profile=Profile.find(1)		
-		@quizzes=Quiz.where(profile_id: @profile.id)
-		@categories=Category.all
-		@done=Array.new(@categories.count,0)
-		@quizzes.each { |q|
-			@nq=Question.find(q.question1)	
-			@done[@nq.category_id-1]=@done[@nq.category_id-1]+1
-		}
-        
+    def index
+        @profile=Profile.find(1)
+        @quizzes=Quiz.where(profile_id: @profile.id)
+        @categories=Category.all
+        @done=Array.new(@categories.count,0)
+        @quizzes.each { |q|
+            @nq=Question.find(q.question1)
+            @done[@nq.category_id-1]=@done[@nq.category_id-1]+1
+        }
+
         startd = @profile.birthday + -365
         endd = @profile.birthday + 365
         peer_total = 0.0
@@ -208,6 +208,6 @@ class QuizzesController < ApplicationController
         else
             @peer_percent = 0
         end
-	end
+    end
 
 end

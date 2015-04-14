@@ -19,7 +19,7 @@ class ProfileTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   def setup
-    @profile = Profile.new(first_name: 'Russel', last_name: 'Peter', birthday: Date.new(1989,1,1), 
+    @profile = Profile.new(first_name: 'Russel', last_name: 'Peter', birthday: Date.new(1989,1,1),
     	password: "password", email: "RPeter@memphis.edu", reward_amount: 0)
   end
 
@@ -48,12 +48,12 @@ class ProfileTest < ActiveSupport::TestCase
   end
 
   test "birthday must be present" do
-    @profile.birthday=" "       
+    @profile.birthday=" "
     assert_not @profile.valid?
   end
 
   test "birthday must be in between Jan 1,1890 and current date" do
-   	@profile.birthday=Date.new(1777,1,1)       
+   	@profile.birthday=Date.new(1777,1,1)
     assert_not @profile.valid?
   end
 
@@ -66,7 +66,7 @@ class ProfileTest < ActiveSupport::TestCase
     end
   end
 
-    test "email validation should reject invalid addresses" do
+  test "email validation should reject invalid addresses" do
     invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
@@ -75,12 +75,12 @@ class ProfileTest < ActiveSupport::TestCase
     end
   end
 
-   test "email should not be too long and need to be less than equal to the 255 character" do
+  test "email should not be too long and need to be less than equal to the 255 character" do
     @profile.email = "a" * 256
     assert_not @profile.valid?
   end
 
-   test "email should be present" do
+  test "email should be present" do
     @profile.email = "     "
     assert_not @profile.valid?
   end

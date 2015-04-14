@@ -24,11 +24,11 @@ class QuestionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
- def setup
+  def setup
     @question = Question.new(level: 1, correct_answer: "George Washington", option1: "John Adams", option2: "George Washington", option3: "Andrew Jackson", option4: "Thomas Jefferson", question: "Who was the first President of the United States?")
   end
 
-    test "level should have a minimum length of 1 character" do
+  test "level should have a minimum length of 1 character" do
     @question.level = 0
     assert_not @question.valid?
   end
@@ -48,7 +48,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert_not @question.valid?
   end
 
-    test "Correct answer should be present" do
+  test "Correct answer should be present" do
     @question.correct_answer = "     "
     assert_not @question.valid?
   end
@@ -68,7 +68,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert_not @question.valid?
   end
 
-    test "Option2 should be present" do
+  test "Option2 should be present" do
     @question.option2 = "     "
     assert_not @question.valid?
   end
@@ -78,7 +78,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert_not @question.valid?
   end
 
-    test "Option3 should be present" do
+  test "Option3 should be present" do
     @question.option3 = "     "
     assert_not @question.valid?
   end
@@ -88,7 +88,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert_not @question.valid?
   end
 
-    test "Option4 should be present" do
+  test "Option4 should be present" do
     @question.option4 = "     "
     assert_not @question.valid?
   end

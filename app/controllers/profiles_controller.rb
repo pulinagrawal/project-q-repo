@@ -1,14 +1,18 @@
 class ProfilesController < ApplicationController
+wrap_parameters include: Profile.attribute_names + [:password]
+
 	def new 
      @profile = Profile.new
 	end 
 
 	def create 
+
+    
+
        @profile = Profile.new(params.require(:profile).permit(:first_name, :last_name, :birthday, :password,:password_confirmation, :email))
-       #@profile.save!
-      # redirect_to new_profile_url
-       #redirect_to profile_url(@profile)
-       if @profile.save!
+      
+    
+       if @profile.save
         sign_in @profile
         flash[:success] = "Welcome to the Sample App!"
        	redirect_to profile_url(@profile)
@@ -34,4 +38,11 @@ class ProfilesController < ApplicationController
     redirect_to new_profile_url
  end 
   end 
+
+
+
+  def user_params
+    params.require(:profile).permit(:first_name, :last_name, :birthday, :password,:password_confirmation, :email)
+      
+    end
 end

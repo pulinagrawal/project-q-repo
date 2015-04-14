@@ -14,22 +14,14 @@
 #
 
 class Profile < ActiveRecord::Base
-
-	#attr_accessor :password
-	has_secure_password(validations: false)
-		#has_secure_password
-#####################################
-#before_create :hash_the_password
-# after_create :nil_the_password
-######################################
-#attr_accessor :email, :password, :password_confirmation
+	has_many :quizzes
 
 
-    has_many :quizzes
+    has_secure_password :validations => false    
 
     validates :email, :uniqueness => true
-    validates :password, length: { minimum: 6 }, allow_nil: true
-	before_save { |profile| profile.email = email.downcase }
+  #  validates :password, length: { minimum: 6 }, allow_nil: true
+	  before_save { |profile| profile.email = email.downcase }
     before_save :create_remember_token
 
 
@@ -56,7 +48,10 @@ class Profile < ActiveRecord::Base
 	#  end
     ###########################################
 
-
+    def create_activation_digest
+      self.activation_token  = Profile.new_token
+      self.activation_digest = Profile.digest(activation_token)
+    end
     ###########################################
 
 

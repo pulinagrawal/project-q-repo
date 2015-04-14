@@ -57,16 +57,6 @@ class ProfileTest < ActiveSupport::TestCase
     assert_not @profile.valid?
   end
 
-  test "password should have a minimum length of 8 character" do
-    @profile.password = "a" * 2
-    assert_not @profile.valid?
-  end
-
-  test "password should have a maximum length of 15 character" do
-    @profile.password = "a" * 20
-    assert_not @profile.valid?
-  end
-
    test "email validation should accept valid addresses" do
     valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
                          first.last@foo.jp alice+bob@baz.cn]

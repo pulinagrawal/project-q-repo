@@ -6,20 +6,24 @@
 	</div>
 
 	<div class="row">		
-		<% @category.each do |c| %>	
-		<div class="col-md-3">
-			<div class="panel panel-primary">
-  				<div class="panel-heading">
-    					<h3 class="panel-title"><%= c.category_name %></h3>
-  				</div>
-  				<div class="panel-body">
-    						<h4><b>Select your Level</b></h4>    						
-  						</div>
-  						<ul class="list-group">
-      						<li class="list-group-item"><%= link_to "Level - 1", newquiz_path(category: c, level: "1") %></li>						
-      						<li class="list-group-item"><%= link_to "Level - 2", newquiz_path(category: c, level: "2") %></li>      						
-   						</ul>
-					</div>					
-		</div>	
+		<% if @category.empty? %>
+		  	No records found!
+		<% else %>
+			<% @category.each do |c| %>	
+						<div class="col-md-3">
+							<div class="panel panel-primary">
+				  				<div class="panel-heading">
+				    					<h3 class="panel-title"><%= c.category_name %></h3>
+				  				</div>
+				  				<div class="panel-body">
+				    						<h4><b>Select your Level</b></h4>    						
+				  						</div>
+				  						<ul class="list-group">
+				      						<li class="list-group-item"><%= link_to "Level - 1", newquiz_path(category: c, level: "1") %></li>						
+				      						<li class="list-group-item"><%= link_to "Level - 2", newquiz_path(category: c, level: "2") %></li>      						
+				   						</ul>
+									</div>					
+						</div>	
+			<% end %>
 		<% end %>		
 	</div>		

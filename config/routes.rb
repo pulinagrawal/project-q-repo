@@ -5,9 +5,18 @@ Rails.application.routes.draw do
  # get 'profile/new'
 
 	root 'static_pages#index'
+ #resources :profile
+  resources :sessions, only: [:new, :create, :destroy]
+
+  
+ 
+
 
   get '/profiles/new', to: 'profiles#new', as: 'new_profile'
   post '/profiles', to: 'profiles#create'
+
+   get '/signin',  to: 'sessions#new' , as: 'signin'
+  delete  '/signout', to: 'sessions#destroy', via: :delete , as: 'signout'
 
   get  '/profiles/:id', to: 'profiles#show', as: 'profile'
   get  '/categories', to: 'categories#show', as: 'category'
@@ -25,6 +34,10 @@ Rails.application.routes.draw do
   get 'quizzes/:id/result' => 'quizzes#result', as: 'quiz_result'
 
   delete '/quizzes/:id', to:'quizzes#destroy' 
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

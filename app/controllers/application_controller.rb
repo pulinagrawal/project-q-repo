@@ -4,4 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
  #rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+
+
+  include SessionsHelper
+
+  # Force signout to prevent CSRF attacks
+  def handle_unverified_request
+    sign_out
+    super
+  end 
 end

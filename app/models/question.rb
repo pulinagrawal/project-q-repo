@@ -13,8 +13,6 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  category_id    :integer
-#  quiz_id        :integer
-#  category       :string
 #
 
 class Question < ActiveRecord::Base
@@ -29,4 +27,3 @@ class Question < ActiveRecord::Base
     validates :option4, presence: true, length: { maximum: 10000 }
     validates :question, presence: true, length: { maximum: 10000 }
 end
-

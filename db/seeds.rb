@@ -1,5 +1,3 @@
-
-
 mo = Profile.create({ first_name: 'Mohammad', last_name: 'Shamim', birthday: Date.new(1989,1,1), password: "password", email: "mfshamim@memphis.edu", reward_amount: 0})
 Craig = Profile.create({first_name: 'Craig', last_name: 'Kelly', birthday: Date.new(1989,1,1), password: "password", email: "cnkelly@memphis.edu", reward_amount: 0})
 Pulin = Profile.create({first_name: 'Pulin', last_name: 'Agrawal', birthday: Date.new(1989,1,1), password: "password", email: "pagrawal@memphis.edu", reward_amount: 0})

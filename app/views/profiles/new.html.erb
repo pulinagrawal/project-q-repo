@@ -1,7 +1,3 @@
-  <head>
-
- 
-
 <div class="container">
 
 	<div class="row">
@@ -25,7 +21,7 @@
      						 	 <% end %>
      					 	</ul>
     					</div>
-  							<% end %> 
+                <% end %> 
 
 					<div class="form-group">
 			  			    <%= f.label :first_name, :class => "col-md-2 control-label" %>
@@ -48,14 +44,14 @@
 			  		<div class="form-group">
 							<%= f.label :password , :class => "col-md-2 control-label"%>
 							<div class="col-md-10">
-							<%= password_field_tag(:password, "", placeholder: "Password", :required => true, :class => "form-control") %>
+							<%= f.password_field :password, class: 'form-control' %>
 							</div> 
 					</div>
 
 				    <div class="form-group">
 							<%= f.label :password_confirmation, "Confirmation" , :class => "col-md-2 control-label"%>
 							<div class="col-md-10">
-							<%= password_field_tag(:password_confirmation, "", placeholder: "Password Confirmation", :required => true, :class => "form-control") %>
+							<%= f.password_field :password_confirmation, :required => true, class: 'form-control' %>
 							</div> 
 					</div>
 			        <div class="form-group">
@@ -74,5 +70,4 @@
 	    </div>
     </div>
  
-</div>
 </div>

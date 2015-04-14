@@ -10,8 +10,8 @@
     <div class="col col-lg-3">
       <div class="row">
         <p class="bs-component">
-          <%=link_to "Profile", new_profile_path, :class => "btn btn-info btn-block" %>	  
-	</p>
+	      <%=link_to "Sign Up", new_profile_path, class: "btn btn-info btn-block" %>
+	    </p>
       </div>
       <div class="row">
         <div class="tab-pane panel-primary">
@@ -20,33 +20,10 @@
           </div>
           <div class="panel-body">
             <div class="form">
-              <form class="form-horizontal">
-                <fieldset>
-	          <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email/Username</label>
-                    <div class="col-lg-12">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-12">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Checkbox
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-12">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                      <button type="reset" class="btn btn-default pull-right">Cancel</button>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
+
+        <%= render :file => '/app/views/sessions/new.html.erb' %> 
+
+
 	    </div>
           </div>
         </div>

@@ -21,19 +21,74 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  level: 1
-  correct_answer: MyString
-  option1: MyString
-  option2: MyString
-  option3: MyString
-  option4: MyString
-  question: MyString
+    level: 1
+    correct_answer: MyString
+    option1: MyString
+    option2: MyString
+    option3: MyString
+    option4: MyString
+    question: MyString
 
 two:
-  level: 1
-  correct_answer: MyString
-  option1: MyString
-  option2: MyString
-  option3: MyString
-  option4: MyString
-  question: MyString
+    level: 1
+    correct_answer: MyString
+    option1: MyString
+    option2: MyString
+    option3: MyString
+    option4: MyString
+    question: MyString
+
+quiz1_1:
+    id: 1
+    level: 1
+    correct_answer: correct
+    option1: wrong1
+    option2: wrong2
+    option3: wrong3
+    option4: wrong4
+    question: Is this question 1?
+    category_id: 1
+
+quiz1_2:
+    id: 2
+    level: 1
+    correct_answer: correct
+    option1: wrong1
+    option2: wrong2
+    option3: wrong3
+    option4: wrong4
+    question: Is this question 2?
+    category_id: 1
+
+quiz1_3:
+    id: 3
+    level: 1
+    correct_answer: correct
+    option1: wrong1
+    option2: wrong2
+    option3: wrong3
+    option4: wrong4
+    question: Is this question 3?
+    category_id: 1
+
+quiz1_4:
+    id: 4
+    level: 1
+    correct_answer: correct
+    option1: wrong1
+    option2: wrong2
+    option3: wrong3
+    option4: wrong4
+    question: Is this question 4?
+    category_id: 1
+
+quiz1_5:
+    id: 5
+    level: 1
+    correct_answer: correct
+    option1: wrong1
+    option2: wrong2
+    option3: wrong3
+    option4: wrong4
+    question: Is this question 5?
+    category_id: 1

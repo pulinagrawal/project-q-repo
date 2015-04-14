@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-md-6 list-group">
+  		<a href="#" class="list-group-item active">
+			Quizzees done
+  		</a>
+		<% @categories.each do |c| %>
+  			<a href="#" class="list-group-item">
+				<%= c.category_name %>
+				<span> : </span>
+				<%= @done[c.id-1] %>
+  			</a>
+		<% end %>
+	</div>
+
+    <div class="col-md-1">&nbsp;</div>
+
+    <div class="col-md-5 list-group">
+  		<a href="#" class="list-group-item active">
+			How are you doing?
+  		</a>
+        <a href="#" class="list-group-item">
+            People near your age generally get <%=(@peer_percent * 100.0).round%>%
+            questions correct.
+        </a>
+	</div>
+</div>

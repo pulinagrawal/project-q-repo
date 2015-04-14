@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408143610) do
+ActiveRecord::Schema.define(version: 20150412103521) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150408143610) do
     t.integer  "question4"
     t.integer  "question5"
     t.integer  "user"
+    t.string   "username"
   end
 
   add_index "quizzes", ["profile_id"], name: "index_quizzes_on_profile_id"

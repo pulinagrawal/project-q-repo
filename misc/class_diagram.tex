@@ -1,0 +1,23 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage{fullpage}
+
+% The following is needed in order to make the code compatible
+% with both latex/dvips and pdflatex.
+\ifx\pdftexversion\undefined
+\usepackage[dvips]{graphicx}
+\else
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+\title{Quizzee Class Diagram for COMP7012}
+\author{Team Q, prepared by Craig Kelly}
+\begin{document}
+
+\maketitle
+
+\section{Class Diagram}
+
+\includegraphics{class_diagram.1}
+
+\end{document}

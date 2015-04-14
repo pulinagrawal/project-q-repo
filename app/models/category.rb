@@ -10,5 +10,7 @@
 
 class Category < ActiveRecord::Base
 	has_many :questions
+
+	validates :category_name, presence:  true, length: { maximum: 30 }
 end
 

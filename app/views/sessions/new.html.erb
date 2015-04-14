@@ -15,7 +15,7 @@
                     <div class="form-group">
                           <%= f.label :password , :class => "col-md-2 control-label"%>
                           <div class="col-md-10">
-                          <%= password_field_tag(:password, "", placeholder: "Password", :required => true, :class => "form-control") %>
+                          <%= f.password_field :password, :placeholder => "Password", :required => true, :class => "form-control" %>
                           </div> 
                      </div>
 

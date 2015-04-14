@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
 	end 
 
 	def create 
-       @profile = Profile.new(params.require(:profile).permit(:first_name, :last_name, :birthday, :password,:password_confirmation, :email))
+       @profile = Profile.new(params.require(:profile).permit(:first_name, :last_name, :birthday, :password, :password_confirmation, :email))
        #@profile.save(@profile)
        #redirect_to new_profile_url
        #redirect_to profile_url(@profile)

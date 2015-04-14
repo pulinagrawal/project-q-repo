@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412091927) do
+ActiveRecord::Schema.define(version: 20150414002337) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150412091927) do
     t.string   "password_digest"
     t.string   "email"
     t.integer  "reward_amount"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "remember_token"
   end
 
@@ -71,5 +71,13 @@ ActiveRecord::Schema.define(version: 20150412091927) do
   end
 
   add_index "quizzes", ["profile_id"], name: "index_quizzes_on_profile_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end

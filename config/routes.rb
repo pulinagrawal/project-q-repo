@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get '/profiles/new', to: 'profiles#new', as: 'new_profile'
   post '/profiles', to: 'profiles#create'
 
-   get '/signin',  to: 'sessions#new'
-  get '/signout', to: 'sessions#destroy', via: :delete
+   get '/signin',  to: 'sessions#new' , as: 'signin'
+  delete  '/signout', to: 'sessions#destroy', via: :delete , as: 'signout'
 
   get  '/profiles/:id', to: 'profiles#show', as: 'profile'
   get  '/categories', to: 'categories#show', as: 'category'

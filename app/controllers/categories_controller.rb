@@ -1,7 +1,12 @@
 class CategoriesController < ApplicationController
   
   def show 
-   @category = Category.all
-  end 
+
+	   if params[:search]
+	     	 @category = Category.search(params[:search]).order("created_at DESC")
+	    else
+	  		 @category = Category.all
+	   end 
+  end   
 
 end

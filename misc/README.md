@@ -1,7 +1,8 @@
 Quizzee Misc README
 ======================
 
-This folder contains misc documentation and the means to generate.
+This folder contains misc documentation (including the means to generate
+the documentation)
 
 Specifically for the Iteration 1 Milestone:
 
@@ -11,4 +12,4 @@ Specifically for the Iteration 1 Milestone:
 The class diagram is build via scons (see SConstruct), using MetaUML, metapost,
 and LaTeX.
 
-The user stories are experted from a google doc.
+The user stories are exported from a google doc.

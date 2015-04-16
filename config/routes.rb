@@ -1,29 +1,22 @@
 Rails.application.routes.draw do
 
-  get 'categories/show'
+  root 'static_pages#index'
 
- # get 'profile/new'
-
-	root 'static_pages#index'
- #resources :profile
   resources :sessions, only: [:new, :create, :destroy]
-
-  
- 
-
 
   get '/profiles/new', to: 'profiles#new', as: 'new_profile'
   post '/profiles', to: 'profiles#create'
 
-   get '/signin',  to: 'sessions#new' , as: 'signin'
+  get '/signin',  to: 'sessions#new' , as: 'signin'
   delete  '/signout', to: 'sessions#destroy', via: :delete , as: 'signout'
 
-  get  '/profiles/:id', to: 'profiles#show', as: 'profile'
   get  '/categories', to: 'categories#show', as: 'category'
   post '/categories/:category_id/:level', to: 'quiz#create'
+  get 'categories/show'
 
 
   get '/profiles/:id/edit', to: 'profiles#edit', as: 'edit_profile'
+  get  '/profiles/:id', to: 'profiles#show', as: 'profile'
   patch '/profiles/:id', to: 'profiles#update'
   put '/profiles/:id', to: 'profiles#update'
   
@@ -32,11 +25,7 @@ Rails.application.routes.draw do
   get 'quizzes/:id' => 'quizzes#show', as: 'quiz'
   patch 'quizzes/:id' => 'quizzes#answer'
   get 'quizzes/:id/result' => 'quizzes#result', as: 'quiz_result'
-
   delete '/quizzes/:id', to:'quizzes#destroy' 
-
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,23 +2,22 @@
 <br>
 <table>
    <tr>
-      <td>First Name: </td>
-      <td> <%= @profile.first_name %></td>
+      <td><p class="lead">First Name:</p></td>
+      <td><p class="lead text-success"> <%= @profile.first_name %></p></td>
    </tr>
    <tr>
-      <td>Last Name:</td>
-      <td><%= @profile.last_name %></td>
+      <td><p class="lead">Last Name:</p></td>
+      <td><p class="lead text-success"><%= @profile.last_name %></p></td>
    </tr>
    <tr>
-      <td>Birthday:</td>
-      <td><%= @profile.birthday %></td>
+      <td><p class="lead">Birthday:</p></td>
+      <td><p class="lead text-success"><%= @profile.birthday %></p></td>
    </tr>
    <tr>
-      <td>Email:</td>
-      <td><%= @profile.email %></td>
+      <td><p class="lead">Email:</p></td>
+      <td><p class="lead text-success"><%= @profile.email %></p></td>
    </tr>
    <tr>
-     <td><%= link_to "Click here to edit profile", edit_profile_path(@profile) %></td> 
+     <td><%= link_to "Edit", edit_profile_path(@profile) , class: 'btn btn-primary' %></td> 
    </tr>
-
 </table>

@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
         sign_out
         super
     end
+
+    def user_is_logged_in?
+        !!session[:id]
+    end
 end

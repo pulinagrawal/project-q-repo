@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
     wrap_parameters include: Profile.attribute_names + [:password]
-
+    before_action :correct_user, only: [:show, :edit, :update]
+    
     def new
         @profile = Profile.new
     end
@@ -38,4 +39,12 @@ class ProfilesController < ApplicationController
     def user_params
         params.require(:profile).permit(:first_name, :last_name, :birthday, :password,:password_confirmation, :email)
     end
+
+    #Before action
+    
+    def correct_user
+        @profile= Profile.find(params[:id])
+        redirect_to(root_url) unless current_profile==@profile
+    end
+
 end

@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+    before_action :correct_user, only: [:show, :edit, :update]
     def deduce_quiz_state
         #Set our defaults
         @quiz_done = false
@@ -208,6 +209,13 @@ class QuizzesController < ApplicationController
         else
             @peer_percent = 0
         end
+    end
+
+    #Before action
+    
+    def correct_user
+        @profile=Profile.find(Quiz.find(params[:id]).profile_id)
+        redirect_to(root_url) unless current_profile==@profile
     end
 
 end

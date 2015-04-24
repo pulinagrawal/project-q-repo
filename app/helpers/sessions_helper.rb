@@ -11,6 +11,7 @@ module SessionsHelper
 
     def current_profile
         @current_profile ||= Profile.find_by_remember_token(cookies[:remember_token])
+	return @current_profile
     end
 
     def sign_out

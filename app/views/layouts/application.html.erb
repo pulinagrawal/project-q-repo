@@ -26,8 +26,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Quizzee World</a></li>
-	<li><%=link_to "Your Quizzees", :controller => 'quizzes', :action => 'index' unless session[:id]%></li>
-	<li><%=link_to "Take a Quizzee!", :controller => 'categories', :action => 'show' unless session[:id] %></li>
+	<li><%=link_to "Your Quizzees", :controller => 'quizzes', :action => 'index' if session[:id]%></li>
+	<% if session[:id] %> 
+	    <li><%=link_to "Take a Quizzee!", :controller => 'categories', :action => 'show'%></li>
+        <% else %> 
+	    <li><%=link_to "Take a Quizzee!", :controller => 'static_pages', :action => 'index'%></li>
+        <% end %>
       </ul>
 
       <%= form_tag(category_path, :method => "get", id: "search-form", class: "navbar-form navbar-left") do %>

@@ -22,6 +22,10 @@ class ProfilesController < ApplicationController
         @profile = Profile.find(params[:id])
     end
 
+    def my
+	@profile = current_profile
+    end
+
     def edit
         @profile = Profile.find(params[:id])
     end

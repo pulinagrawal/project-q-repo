@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
         if @profile.save
             sign_in @profile
             flash[:success] = "Welcome to the Sample App!"
+            UserMailer.welcome_email(@profile)
             redirect_to profile_url(@profile)
         else
             redirect_to category_path

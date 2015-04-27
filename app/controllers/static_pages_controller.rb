@@ -8,9 +8,9 @@ class StaticPagesController < ApplicationController
 
     def index
             if current_profile
-                @profile = Profile.new
-            else
                 landing
+            else
+                @profile = Profile.new
             end
     end
 end

@@ -1,2 +1,2 @@
 ENV['EMAIL'] = 'quizzeeq@gmail.com'
-ENV['PASSWORD'] = 'SoftEngg'
+ENV['PASSWORD'] = 'theletterq'

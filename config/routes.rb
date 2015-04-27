@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'static_pages#index'
+  get 'myhome', to:'static_pages#landing', as: 'landing'
 
   resources :sessions, only: [:new, :create, :destroy]
 

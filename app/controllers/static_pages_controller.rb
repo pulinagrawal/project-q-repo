@@ -1,11 +1,16 @@
 class StaticPagesController < ApplicationController
-    def home
+    def landing
+            quizzes_index_requirements
     end
 
     def example
     end
 
     def index
-        @profile = Profile.new
+            if current_profile
+                @profile = Profile.new
+            else
+                landing
+            end
     end
 end

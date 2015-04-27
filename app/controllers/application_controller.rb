@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     end
 
     def user_is_logged_in?
-        !!session[:id]
+        !!session[:profile_id]
     end
 
     def quizzes_index_requirements

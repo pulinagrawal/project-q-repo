@@ -1,3 +1,35 @@
+class OneStat
+    attr_accessor :quizzes
+    attr_accessor :questions
+    attr_accessor :correct
+
+    def initialize
+        @quizzes = 0
+        @questions = 0
+        @correct = 0
+    end
+
+    def hit(quiz, quest, correct)
+        @quizzes += quiz
+        @questions += quest
+        @correct += correct
+    end
+
+    def quiz_percent(total)
+        if total < 1
+            return 0.0
+        end
+        return (Float(@quizzes) / total) * 100.0
+    end
+
+    def percent_correct
+        if @questions < 1
+            return 0.0
+        end
+        return (Float(@correct) / @questions) * 100.0
+    end
+end
+
 class StatsController < ApplicationController
     before_action :correct_user, only: [:show]
 
@@ -35,18 +67,20 @@ class StatsController < ApplicationController
         cat_counts = {}
         @categories.each do |cat|
             cat_names[cat.id] = cat.category_name
-            cat_counts[cat.category_name] = 0
+            cat_counts[cat.category_name] = OneStat.new
         end
 
-        age_stats = {}
+        @age_stats = {}
         @AGE_GROUPS.keys.each do |grp|
-            age_stats[grp] = 0
+            @age_stats[grp] = OneStat.new
             cat_names.values.each do |cat|
-                age_stats[cat] = 0
+                @age_stats[cat] = OneStat.new
             end
         end
 
-        total_count = 0
+        @total_count = 0
+        total_questions = 0
+        total_correct = 0
 
         @quizzes.each do |quiz|
             cat = cat_names[Question.find(quiz.question1).category_id]
@@ -59,34 +93,28 @@ class StatsController < ApplicationController
 
             age_group = @AGE_CLASSIFIER[age]
 
-            total_count += 1
-            cat_counts[cat] += 1
-            age_stats[age_group] += 1
-            age_stats[cat] += 1
-        end
+            correct = 0
+            (1..5).each do |idx|
+                if quiz["correct#{idx}"]
+                    correct += 1
+                end
+            end
 
-        if total_count < 1
-            total_count = 1 #no div by zero
+            @total_count += 1
+            total_questions += 5
+            total_correct += correct
+
+            cat_counts[cat].hit(1, 5, correct)
+            @age_stats[age_group].hit(1, 5, correct)
+            @age_stats[cat].hit(1, 5, correct)
         end
-        total_count = Float(total_count) #Simply some conversions below
 
         # Add category stats on the fly
         @categories.each do |cat|
-            #TODO: actual stats
             class << cat
-                attr_accessor :quiz_percent
+                attr_accessor :stats
             end
-            cat.quiz_percent = (cat_counts[cat.category_name] / total_count) * 100.0
-        end
-
-        # Setup age group stats
-        @age_group_stats = {}
-        age_stats.keys.each do |grp|
-            stats = {
-                "percent" => (age_stats[grp] / total_count) * 100.0
-            }
-            #TODO: age+cat breakdown
-            @age_group_stats[grp] = stats
+            cat.stats = cat_counts[cat.category_name]
         end
     end
 

@@ -4,7 +4,8 @@
         <% @categories.each do |c| %>
             <a href="#" class="list-group-item">
                 <%= c.category_name %>:
-                <%= c.quiz_percent %>%
+                <%= c.stats.quiz_percent(@total_count) %>% of quizzes,
+                <%= c.stats.percent_correct %>% of questions correct
             </a>
         <% end %>
     </div>
@@ -18,7 +19,8 @@
         <% @AGE_GROUPS.keys.each do |grp| %>
             <a href="#" class="list-group-item">
                 <%= grp %>:
-                <%= @age_group_stats[grp]["percent"] %>%
+                <%= @age_stats[grp].quiz_percent(@total_count) %>% of quizzes,
+                <%= @age_stats[grp].percent_correct %>% of questions correct
             </a>
         <% end %>
     </div>

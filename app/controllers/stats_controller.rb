@@ -2,7 +2,14 @@ class StatsController < ApplicationController
     before_action :correct_user, only: [:show]
     
     def show
-        @category = Category.all
+        @categories = Category.all
+        @categories.each do |cat| 
+            #TODO: actual stats
+            class << cat
+                attr_accessor :quiz_count
+            end
+            cat.quiz_count = 42
+        end
         
         #TODO: find this as part of the loop for stat gathering
         startd = @profile.birthday + -365
@@ -27,7 +34,7 @@ class StatsController < ApplicationController
     end
     
     def correct_user
-        @profile=Profile.find(Quiz.find(params[:id]).profile_id)
+        @profile=Profile.find(session[:profile_id])
         redirect_to(root_url) unless current_profile==@profile
     end
 end

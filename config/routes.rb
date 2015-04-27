@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   post '/categories/:category_id/:level', to: 'quiz#create'
   get 'categories/show'
 
-
   get '/profiles/:id/edit', to: 'profiles#edit', as: 'edit_profile'
   get  '/profiles/:id', to: 'profiles#show', as: 'profile'
   patch '/profiles/:id', to: 'profiles#update'
@@ -26,6 +25,8 @@ Rails.application.routes.draw do
   patch 'quizzes/:id' => 'quizzes#answer'
   get 'quizzes/:id/result' => 'quizzes#result', as: 'quiz_result'
   delete '/quizzes/:id', to:'quizzes#destroy' 
+  
+  get 'stats', to: 'stats#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

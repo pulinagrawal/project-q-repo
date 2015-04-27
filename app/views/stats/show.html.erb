@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-md-6 list-group">
+  		<h1>Performance by Category</h1>
+		<% @categories.each do |c| %>
+  			<a href="#" class="list-group-item">
+				<%= c.category_name %>
+				<span> : </span>
+				<%= @done[c.id-1] %>
+  			</a>
+		<% end %>
+	</div>
+
+    <div class="col-md-6 list-group">
+  		<h1>Performance by Age Group</h1>
+        <a href="#" class="list-group-item">
+            People near your age generally get <%=(@peer_percent * 100.0).round%>%
+            questions correct.
+        </a>
+	</div>
+</div>

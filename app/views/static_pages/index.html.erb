@@ -1,28 +1,32 @@
-<div class="row">
-    <div class="col col-lg-9">
-        <div class="jumbotron">
-            <h1>Welcome to Quizzee!</h1>
-            <p>Here you can have fun, earn money and most importantly learn!</p>
-            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+<% if current_profile %>
+    <%= render template: 'static_pages/landing' %> 
+<% else %>
+    <div class="row">
+        <div class="col col-lg-9">
+            <div class="jumbotron">
+                <h1>Welcome to Quizzee!</h1>
+                <p>Here you can have fun, earn money and most importantly learn!</p>
+                <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+            </div>
         </div>
-    </div>
-    <div class="col col-lg-3">
-        <div class="row">
-            <p class="bs-component">
-	        <%=link_to "Sign Up", new_profile_path, class: "btn btn-info btn-block" %>
-	    </p>
-	</div>
-        <div class="row">
-            <div class="tab-pane panel-primary">
-		<div class="panel-heading">
-                    <h3 class="panel-title">Log In</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="form">
-                        <%= render :file => '/app/views/sessions/new.html.erb' %> 
+        <div class="col col-lg-3">
+            <div class="row">
+                <p class="bs-component">
+	            <%=link_to "Sign Up", new_profile_path, class: "btn btn-info btn-block" %>
+	            </p>
+	        </div>
+            <div class="row">
+                <div class="tab-pane panel-primary">
+		            <div class="panel-heading">
+                        <h3 class="panel-title">Log In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form">
+                            <%= render :file => '/app/views/sessions/new.html.erb' %> 
+	                    </div>
+                    </div>
 	            </div>
-                </div>
-	    </div>
+            </div>
         </div>
     </div>
-</div>
+<% end %>

@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
-    def home
+    def landing
+        quizzesController= QuizzesController.new()
+        quizzesController.index()
+        @categories=quizzesController.categories
     end
 
     def example

@@ -160,7 +160,7 @@ class QuizzesController < ApplicationController
 
 
     def index
-        @profile=Profile.find(1)
+        @profile=current_profile
         @quizzes=Quiz.where(profile_id: @profile.id)
         @categories=Category.all
         @done=Array.new(@categories.count,0)

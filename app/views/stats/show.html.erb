@@ -9,8 +9,8 @@
                 <% @categories.each do |c| %>
                     <tr>
                         <td><%= c.category_name %></td>
-                        <td><%= c.stats.quiz_percent(@total_count) %>%</td>
-                        <td><%= c.stats.percent_correct %>%</td>
+                        <td><%= c.stats.quiz_percent(@total_count).round(1) %>%</td>
+                        <td><%= c.stats.percent_correct.round(1) %>%</td>
                     </tr>
                 <% end %>
             </tbody>
@@ -31,8 +31,8 @@
                 <% @AGE_GROUPS.keys.each do |grp| %>
                     <tr>
                         <td><%= grp %></td>
-                        <td><%= @age_stats[grp].quiz_percent(@total_count) %>%</td>
-                        <td><%= @age_stats[grp].percent_correct %>%</td>
+                        <td><%= @age_stats[grp].quiz_percent(@total_count).round(1) %>%</td>
+                        <td><%= @age_stats[grp].percent_correct.round(1) %>%</td>
                     </tr>
                 <% end %>
             </tbody>

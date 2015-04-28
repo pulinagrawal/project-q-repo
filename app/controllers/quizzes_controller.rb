@@ -122,7 +122,7 @@ class QuizzesController < ApplicationController
     end
 
     def new
-        @questions=Question.where(category_id:params[:category], level: Integer(params[:level])).take(5)
+        @questions=Question.where(category_id:params[:category], level: Integer(params[:level])).order("RANDOM()").limit(5)
 
         #need to change Profile.find with profile in session
         @nwquiz=Quiz.create(profile: Profile.find(current_profile.id),

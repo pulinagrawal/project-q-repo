@@ -16,11 +16,11 @@
 #
 
 class Question < ActiveRecord::Base
-	belongs_to :quiz
-	belongs_to :category
+    belongs_to :quiz
+    belongs_to :category
 
-	validates :level, presence:  true, inclusion:{in: 1..3}
-	validates :correct_answer, presence:  true, length: { maximum: 10000 }
+    validates :level, presence:  true, inclusion:{in: 1..3}
+    validates :correct_answer, presence:  true, length: { maximum: 10000 }
     validates :option1, presence: true, length: { maximum: 10000 }
     validates :option2, presence: true, length: { maximum: 10000 }
     validates :option3, presence: true, length: { maximum: 10000 }

@@ -1,74 +1,74 @@
 
-	<div class="row">
-		<div class="col-md-12">
-		   <h3>Congrats, you just earned
-           <span class="badge alert-success"><%=@quiz_score%></span>
-           points!
-           </h3>
-		</div>
-	</div>
+<div class="row">
+    <div class="col-md-12">
+       <h3>Congrats, you just earned
+       <span class="badge alert-success"><%=@quiz_score%></span>
+       points!
+       </h3>
+    </div>
+</div>
 
-	<div class="row">
-		<div class="col-md-8">
-			<div class="panel panel-primary">
-  				<div class="panel-heading">
-    					<h5 class="panel-title">Result</h5>
-  				</div>
-  				<div class="panel-body">
-  							<% @@counter = 0 %>
-    						<h5><ul class="list-group"> Question 1 - <% if @quiz.correct1?
-    							 	@@counter = @@counter + 1 %>
-    							<b><font color="green">Correct! </font></b>
-    							<% else  %>
-    							<b><font color="red">Incorrect! </font></b>
-    							<% end %>
-    						</ul></h5>
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                    <h5 class="panel-title">Result</h5>
+            </div>
+            <div class="panel-body">
+                        <% @@counter = 0 %>
+                        <h5><ul class="list-group"> Question 1 - <% if @quiz.correct1?
+                                @@counter = @@counter + 1 %>
+                            <b><font color="green">Correct! </font></b>
+                            <% else  %>
+                            <b><font color="red">Incorrect! </font></b>
+                            <% end %>
+                        </ul></h5>
 
-    						<h5><ul class="list-group"> Question 2 - <% if @quiz.correct2?
-    							@@counter = @@counter + 1 %>
-    							<b><font color="green">Correct! </font></b>
-    							<% else  %>
-    							<b><font color="red">Incorrect! </font></b>
-    							<% end %>
-    						</ul></h5>
+                        <h5><ul class="list-group"> Question 2 - <% if @quiz.correct2?
+                            @@counter = @@counter + 1 %>
+                            <b><font color="green">Correct! </font></b>
+                            <% else  %>
+                            <b><font color="red">Incorrect! </font></b>
+                            <% end %>
+                        </ul></h5>
 
-    						<h5><ul class="list-group"> Question 3 - <% if @quiz.correct3?
-    							@@counter = @@counter + 1 %>
-    							<b><font color="green">Correct! </font></b>
-    							<% else  %>
-    							<b><font color="red">Incorrect! </font></b>
-    							<% end %>
-    						</ul></h5>
+                        <h5><ul class="list-group"> Question 3 - <% if @quiz.correct3?
+                            @@counter = @@counter + 1 %>
+                            <b><font color="green">Correct! </font></b>
+                            <% else  %>
+                            <b><font color="red">Incorrect! </font></b>
+                            <% end %>
+                        </ul></h5>
 
-    						<h5><ul class="list-group"> Question 4 - <% if @quiz.correct4?
-    							@@counter = @@counter + 1 %>
-    							<b><font color="green">Correct! </font></b>
-    							<% else  %>
-    							<b><font color="red">Incorrect! </font></b>
-    							<% end %>
-    						</ul></h5>
+                        <h5><ul class="list-group"> Question 4 - <% if @quiz.correct4?
+                            @@counter = @@counter + 1 %>
+                            <b><font color="green">Correct! </font></b>
+                            <% else  %>
+                            <b><font color="red">Incorrect! </font></b>
+                            <% end %>
+                        </ul></h5>
 
-    						<h5><ul class="list-group"> Question 5 - <% if @quiz.correct5?
-    							@@counter = @@counter + 1 %>
-    							<b><font color="green">Correct! </font></b>
-    							<% else  %>
-    							<b><font color="red">Incorrect! </font></b>
-    							<% end %>
-    						</ul></h5>
-  						</div>
+                        <h5><ul class="list-group"> Question 5 - <% if @quiz.correct5?
+                            @@counter = @@counter + 1 %>
+                            <b><font color="green">Correct! </font></b>
+                            <% else  %>
+                            <b><font color="red">Incorrect! </font></b>
+                            <% end %>
+                        </ul></h5>
+                    </div>
 
-  						<div class="panel-heading">
-    						<h5 class="panel-title">Aggregated Result</h5>
-  						</div>
-  						<div class="panel-body">
-  							<h5><ul class="list-group"> Total Correct - <%= @@counter %>
-    						</ul></h5>
-    						<h5><ul class="list-group"> Total Incorrect - <%= 5 - @@counter %>
-    						</ul></h5>    						
-    						[<%= link_to "Show Categories", category_path %>]
-  						</div>  						  						
-  					</div>				
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="panel-heading">
+                        <h5 class="panel-title">Aggregated Result</h5>
+                    </div>
+                    <div class="panel-body">
+                        <h5><ul class="list-group"> Total Correct - <%= @@counter %>
+                        </ul></h5>
+                        <h5><ul class="list-group"> Total Incorrect - <%= 5 - @@counter %>
+                        </ul></h5>
+                        [<%= link_to "Show Categories", category_path %>]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

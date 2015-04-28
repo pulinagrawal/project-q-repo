@@ -21,8 +21,8 @@
 #
 
 class Quiz < ActiveRecord::Base
-	belongs_to :profile
-	has_many :questions
+    belongs_to :profile
+    has_many :questions
 
     validates_inclusion_of :start_date, :in => Date.new(1890,1,1)..Date.current, presence:true
     validates :correct1, inclusion: { in: [true, false, nil] }
@@ -30,6 +30,4 @@ class Quiz < ActiveRecord::Base
     validates :correct3, inclusion: { in: [true, false, nil] }
     validates :correct4, inclusion: { in: [true, false, nil] }
     validates :correct5, inclusion: { in: [true, false, nil] }
-    
-
 end

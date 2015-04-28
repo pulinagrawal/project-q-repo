@@ -1,0 +1,2 @@
+# To prevent password from getting uploaded
+app_env_vars.rb

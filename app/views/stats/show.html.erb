@@ -1,13 +1,20 @@
 <div class="row">
     <div class="col-md-6 list-group">
         <h1>Quizzes Taken by Category</h1>
-        <% @categories.each do |c| %>
-            <a href="#" class="list-group-item">
-                <%= c.category_name %>:
-                <%= c.stats.quiz_percent(@total_count) %>% of quizzes,
-                <%= c.stats.percent_correct %>% of questions correct
-            </a>
-        <% end %>
+        <table class="table table-condensed">
+            <thead>
+                <tr><th>Category</th><th>Per of Quizzes</th><th>Per Correct</th></tr>
+            </thead>
+            <tbody>
+                <% @categories.each do |c| %>
+                    <tr>
+                        <td><%= c.category_name %></td>
+                        <td><%= c.stats.quiz_percent(@total_count) %>%</td>
+                        <td><%= c.stats.percent_correct %>%</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 
     <div class="col-md-6 list-group">
@@ -16,12 +23,19 @@
             People near your age generally get <%=(@peer_percent * 100.0).round%>%
             questions correct.
         </a>
-        <% @AGE_GROUPS.keys.each do |grp| %>
-            <a href="#" class="list-group-item">
-                <%= grp %>:
-                <%= @age_stats[grp].quiz_percent(@total_count) %>% of quizzes,
-                <%= @age_stats[grp].percent_correct %>% of questions correct
-            </a>
-        <% end %>
+        <table class="table table-condensed">
+            <thead>
+                <tr><th>Age Group</th><th>Per of Quizzes</th><th>Per Correct</th></tr>
+            </thead>
+            <tbody>
+                <% @AGE_GROUPS.keys.each do |grp| %>
+                    <tr>
+                        <td><%= grp %></td>
+                        <td><%= @age_stats[grp].quiz_percent(@total_count) %>%</td>
+                        <td><%= @age_stats[grp].percent_correct %>%</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 </div>

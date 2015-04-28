@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414002337) do
+ActiveRecord::Schema.define(version: 20150428004521) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150414002337) do
     t.integer  "category_id"
     t.integer  "quiz_id"
     t.string   "category"
+    t.string   "mediaurl"
   end
 
   add_index "questions", ["category_id"], name: "index_questions_on_category_id"

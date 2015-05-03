@@ -51,4 +51,6 @@ class ProfilesController < ApplicationController
         redirect_to(root_url) unless current_profile==@profile
     end
 
+
+
 end

@@ -23,7 +23,7 @@ class QuizzesController < ApplicationController
                     break # found our question, so we're all done
                 end
             }
-
+            
             if question_index.nil?
                 #Nothing selected - must be at question 1
                 @current_question_num = 1
@@ -51,6 +51,7 @@ class QuizzesController < ApplicationController
         return score
     end
 
+    
     def show
         @quiz = Quiz.find(params[:id])
         deduce_quiz_state

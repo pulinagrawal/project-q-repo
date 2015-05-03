@@ -51,7 +51,7 @@
         </div>
 
         <div>
-            <% if ! @current_question.mediaurl.empty? %>
+            <% if ! @current_question.mediaurl.nil? and ! @current_question.mediaurl.empty? %>
                 <img class="img-responsive img-rounded" 
                      src="/projectPics/<%=@current_question.mediaurl%>" 
                      alt="<%=@current_question.question%>"

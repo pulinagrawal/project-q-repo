@@ -1,5 +1,6 @@
 class QuizzesController < ApplicationController
-    before_action :correct_user, only: [:show, :edit, :update]
+    before_action :correct_user
+    
     def deduce_quiz_state
         #Set our defaults
         @quiz_done = false
@@ -113,6 +114,8 @@ class QuizzesController < ApplicationController
             end
             user.reward_amount += qs
             user.save!
+            #Saving will change the remember token, so change the cookie
+            cookies.permanent[:remember_token] = user.remember_token
             logger.debug user.to_json
 
             redirect_to action: "result", id: params[:id]
@@ -122,7 +125,7 @@ class QuizzesController < ApplicationController
     end
 
     def new
-        @questions=Question.where(category_id:params[:category], level: Integer(params[:level])).take(5)
+        @questions=Question.where(category_id:params[:category], level: Integer(params[:level])).order("RANDOM()").limit(5)
 
         #need to change Profile.find with profile in session
         @nwquiz=Quiz.create(profile: Profile.find(current_profile.id),
@@ -165,8 +168,9 @@ class QuizzesController < ApplicationController
     # Before action
 
     def correct_user
-        @profile=Profile.find(session[:profile_id])
-        redirect_to(root_url) unless current_profile==@profile
+        check_profile = current_profile
+        @profile = Profile.find(session[:profile_id])
+        redirect_to(root_url) unless check_profile==@profile
     end
 
 end

@@ -25,9 +25,10 @@ one:
   reward_amount: 1
 
 two:
+  id: 2
   first_name: MyString
   last_name: MyString
-  birthday: 2015-03-30
+  birthday: 2000-03-30
   password_digest: MyString
   email: MyString
   reward_amount: 1

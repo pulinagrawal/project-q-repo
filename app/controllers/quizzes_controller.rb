@@ -168,8 +168,9 @@ class QuizzesController < ApplicationController
     # Before action
 
     def correct_user
-        @profile=Profile.find(session[:profile_id])
-        redirect_to(root_url) unless current_profile==@profile
+        check_profile = current_profile
+        @profile = Profile.find(session[:profile_id])
+        redirect_to(root_url) unless check_profile==@profile
     end
 
 end

@@ -11,7 +11,11 @@ module SessionsHelper
 
     def current_profile
         @current_profile ||= Profile.find_by_remember_token(cookies[:remember_token])
-	return @current_profile
+        if not session.has_key?(:profile_id)
+            #They returned with the cookie, but not the session variable
+            session[:profile_id] = @current_profile.id
+        end
+        return @current_profile
     end
 
     def sign_out

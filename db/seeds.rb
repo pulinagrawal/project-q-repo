@@ -143,7 +143,7 @@ animal_questions = Question.create([
 { category_id: animal.id, mediaurl:"7_animal_lion.jpg", level: 1, correct_answer: "Lion", option1: "Cat", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"8_animal_shark.jpg", level: 1, correct_answer: "Shark", option1: "Cat", option2: "Dog", option3: "Shark", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"9_animal_zebra.jpg", level: 1, correct_answer: "Zebra", option1: "Cat", option2: "Dog", option3: "Zebra", option4: "Lion", question: "Name the animal shown in the picture?"},
-{ category_id: animal.id, mediaurl:"10_animal_kangaroo.jpg", level: 1, correct_answer: "kangaroo", option1: "Cat", option2: "Dog", option3: "Kangaroo", option4: "Lion", question: "Name the animal shown in the picture?"},
+{ category_id: animal.id, mediaurl:"10_animal_kangaroo.jpg", level: 1, correct_answer: "Kangaroo", option1: "Cat", option2: "Dog", option3: "Platypus", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"11_animal_gorilla.jpg", level: 2, correct_answer: "Gorilla", option1: "Gorilla", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"12_animal_penguin.jpg", level: 2, correct_answer: "Penguin", option1: "Cat", option2: "Dog", option3: "Penguin", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"13_animal_camel.jpg", level: 2, correct_answer: "Camel", option1: "Cat", option2: "Dog", option3: "Camel", option4: "Lion", question: "Name the animal shown in the picture?"},

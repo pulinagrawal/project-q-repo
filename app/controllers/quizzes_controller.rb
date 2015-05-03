@@ -114,6 +114,8 @@ class QuizzesController < ApplicationController
             end
             user.reward_amount += qs
             user.save!
+            #Saving will change the remember token, so change the cookie
+            cookies.permanent[:remember_token] = user.remember_token
             logger.debug user.to_json
 
             redirect_to action: "result", id: params[:id]

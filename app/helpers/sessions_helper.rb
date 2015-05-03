@@ -11,7 +11,7 @@ module SessionsHelper
 
     def current_profile
         @current_profile ||= Profile.find_by_remember_token(cookies[:remember_token])
-        if not session.has_key?(:profile_id)
+        if not session.has_key?(:profile_id) and not @current_profile.nil?
             #They returned with the cookie, but not the session variable
             session[:profile_id] = @current_profile.id
         end

@@ -1,5 +1,6 @@
 class QuizzesController < ApplicationController
-    before_action :correct_user, only: [:show, :edit, :update]
+    before_action :correct_user
+    
     def deduce_quiz_state
         #Set our defaults
         @quiz_done = false

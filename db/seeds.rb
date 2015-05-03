@@ -94,8 +94,32 @@ geography_questions = Question.create([
 	{ category_id: geography.id, level: 1, correct_answer: "New Delhi", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "New Delhi", question: "What is the capital of India?"},
 	{ category_id: geography.id, level: 1, correct_answer: "Washington DC", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Washington DC", question: "What is the capital of United States of America?"},
 	{ category_id: geography.id, level: 1, correct_answer: "Islamabad", option1: "karachi", option2: "Lahore", option3: "Islamabad", option4: "Hydrabad", question: "What is the capital of Pakistan?"},
-	{ category_id: geography.id, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"}
-
+	{ category_id: geography.id, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"},
+    { category_id: geography.id, level: 1, correct_answer: "Abu Dhabi", option1: "Abu Dhabi", option2: "Beijing", option3: "Ottawa", option4: "Panama City", question: "What is the capital of United Arab Emirates?"},
+    { category_id: geography.id, level: 1, correct_answer: "Abuja", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Abuja", question: "What is the capital of Nigera?"},
+    { category_id: geography.id, level: 1, correct_answer: "Addis Ababa", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Addis Ababa", question: "What is the capital of Ethopia"},
+    { category_id: geography.id, level: 1, correct_answer: "Amsterdam", option1: "karachi", option2: "Lahore", option3: "Amsterdam", option4: "Hydrabad", question: "What is the capital of Netherlands?"},
+    { category_id: geography.id, level: 1, correct_answer: "Baku", option1: "Khartoum", option2: "Beijing", option3: "Baku", option4: "Amsterdam", question: "What is the capital of Azerbaijan?"},
+    { category_id: geography.id, level: 2, correct_answer: "Berlin", option1: "Khartoum", option2: "Berlin", option3: "Ottawa", option4: "Panama City", question: "What is the capital of Germany?"},
+    { category_id: geography.id, level: 2, correct_answer: "Belgrade", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Belgrade", question: "What is the capital of Serbia?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bern", option1: "Kansas ", option2: "Memphis", option3: "Germantown", option4: "Bern", question: "What is the capital of Switzerland?"},
+    { category_id: geography.id, level: 2, correct_answer: "Brussels", option1: "karachi", option2: "Lahore", option3: "Brussels", option4: "Hydrabad", question: "What is the capital of Belgium?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bucharest", option1: "Khartoum", option2: "Beijing", option3: "Bucharest", option4: "Amsterdam", question: "What is the capital of Romania?"},
+    { category_id: geography.id, level: 2, correct_answer: "Brasilia", option1: "Khartoum", option2: "Beijing", option3: "Ottawa", option4: "Brasilia", question: "What is the capital of Brazil?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bangkok", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Bangkok", question: "What is the capital of Thailand?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bogota", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Bogota", question: "What is the capital of Colombia"},
+    { category_id: geography.id, level: 2, correct_answer: "Bridgetown", option1: "karachi", option2: "Lahore", option3: "Bridgetown", option4: "Hydrabad", question: "What is the capital of Barbados?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bamako", option1: "Khartoum", option2: "Beijing", option3: "Bamako", option4: "Amsterdam", question: "What is the capital of Mali?"},
+    { category_id: geography.id, level: 3, correct_answer: "Copenhagen", option1: "Khartoum", option2: "Copenhagen", option3: "Ottawa", option4: "Panama City", question: "What is the capital of Denmark?"},
+    { category_id: geography.id, level: 3, correct_answer: "Dhaka", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Dhaka", question: "What is the capital of Bangladesh?"},
+    { category_id: geography.id, level: 3, correct_answer: "Dakar", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Dakar", question: "What is the capital of Senegal?"},
+    { category_id: geography.id, level: 3, correct_answer: "Canberra", option1: "karachi", option2: "Lahore", option3: "Canberra", option4: "Hydrabad", question: "What is the capital of Australia?"},
+    { category_id: geography.id, level: 3, correct_answer: "Caracas", option1: "Khartoum", option2: "Beijing", option3: "Caracas", option4: "Amsterdam", question: "What is the capital of Venezuela?"},
+    { category_id: geography.id, level: 3, correct_answer: "Doha", option1: "Khartoum", option2: "Doha", option3: "Ottawa", option4: "Panama City", question: "What is the capital of Qatar?"},
+    { category_id: geography.id, level: 3, correct_answer: "Dublin", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Dublin", question: "What is the capital of Ireland?"},
+    { category_id: geography.id, level: 3, correct_answer: "Hagatna", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Hagatna", question: "What is the capital of Guam?"},
+    { category_id: geography.id, level: 3, correct_answer: "Kuala Lumpur", option1: "karachi", option2: "Lahore", option3: "Kuala Lumpur", option4: "Hydrabad", question: "What is the capital of Malaysia?"},
+    { category_id: geography.id, level: 3, correct_answer: "Kathmandu", option1: "Khartoum", option2: "Beijing", option3: "Kathmandu", option4: "Amsterdam", question: "What is the capital of Nepal?"}
 
 ])
 

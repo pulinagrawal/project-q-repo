@@ -31,7 +31,7 @@ class OneStat
 end
 
 class StatsController < ApplicationController
-    before_action :correct_user, only: [:show]
+    before_action :correct_user
 
     def setup_aging
         # Age groups are adapted from the developmental groups used by

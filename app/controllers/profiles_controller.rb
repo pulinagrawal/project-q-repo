@@ -21,7 +21,11 @@ class ProfilesController < ApplicationController
     end
 
     def show
-        @profile = Profile.find(params[:id])
+        if (params[:id]).to_i <= Profile.last.id
+            @profile = Profile.find(params[:id])
+        else
+            redirect_to root_url
+        end
     end
 
     def my
@@ -49,7 +53,9 @@ class ProfilesController < ApplicationController
     #Before action
     
     def correct_user
-        @profile= Profile.find(params[:id])
+        if (params[:id]).to_i <= Profile.last.id
+            @profile= Profile.find(params[:id])
+        end
         redirect_to(root_url) unless current_profile==@profile
     end
 

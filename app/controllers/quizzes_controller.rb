@@ -1,6 +1,5 @@
 class QuizzesController < ApplicationController
-    before_action :correct_user
-    
+    before_action :correct_user, only: [:show, :edit, :update]
     def deduce_quiz_state
         #Set our defaults
         @quiz_done = false
@@ -114,8 +113,6 @@ class QuizzesController < ApplicationController
             end
             user.reward_amount += qs
             user.save!
-            #Saving will change the remember token, so change the cookie
-            cookies.permanent[:remember_token] = user.remember_token
             logger.debug user.to_json
 
             redirect_to action: "result", id: params[:id]
@@ -154,6 +151,7 @@ class QuizzesController < ApplicationController
     end
 
     def destroy
+        session[:email_id]=nil
         @quiz = Quiz.find(params[:id])
         @quiz.destroy
         respond_to do |format|
@@ -168,9 +166,8 @@ class QuizzesController < ApplicationController
     # Before action
 
     def correct_user
-        check_profile = current_profile
-        @profile = Profile.find(session[:profile_id])
-        redirect_to(root_url) unless check_profile==@profile
+        @profile=Profile.find(session[:profile_id])
+        redirect_to(root_url) unless current_profile==@profile
     end
 
 end

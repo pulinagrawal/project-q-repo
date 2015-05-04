@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get  '/profiles/:id', to: 'profiles#show', as: 'profile'
   patch '/profiles/:id', to: 'profiles#update'
   put '/profiles/:id', to: 'profiles#update'
+
+  get '/passwordresets/new', to: 'passwordresets#new', as: 'new_password'
+  post '/passwordresets', to: 'passwordresets#passwordreset', as: 'passwordreset_profile'
   
   get 'quizzes/new', to: 'quizzes#new', as: 'newquiz'
   get 'quizzes/index', to: 'quizzes#index', as:'quiz_index'

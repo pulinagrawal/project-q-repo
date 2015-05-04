@@ -19,3 +19,4 @@ bin/rake db:setup
 bin/rails s -b 0.0.0.0
 ```
 Reference pictures taken from 100picsquizanswers.com/
+Some questions taken from http://www.funtrivia.com/playquiz/quiz32263624ef8a8.html

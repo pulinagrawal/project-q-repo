@@ -151,6 +151,7 @@ class QuizzesController < ApplicationController
     end
 
     def destroy
+        session[:email_id]=nil
         @quiz = Quiz.find(params[:id])
         @quiz.destroy
         respond_to do |format|

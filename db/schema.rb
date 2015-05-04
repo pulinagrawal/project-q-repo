@@ -69,9 +69,16 @@ ActiveRecord::Schema.define(version: 20150428004521) do
     t.integer  "question4"
     t.integer  "question5"
     t.integer  "user"
-    t.string   "username"
   end
 
   add_index "quizzes", ["profile_id"], name: "index_quizzes_on_profile_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end

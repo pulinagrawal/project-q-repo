@@ -1,9 +1,59 @@
 <div class="row">
-    <div class="col">
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>Title Stuff goes here</p>
+                        <p>Panel class can be modified to change the look</p>
+                    </div>
+                    <div class="panel-footer">
+                        Title
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>Rank Stuff goes here</p>
+                        <p>Panel class can be modified to change the look</p>
+                    </div>
+                    <div class="panel-footer">
+                        Rank :<%= ranking %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>Points Stuff goes here</p>
+                        <p>Panel class can be modified to change the look</p>
+                    </div>
+                    <div class="panel-footer">
+                        Points
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="list-group">
+                <a class="list-group-item active" href="#">Recommended Quizzees</a>
+                <a class="list-group-item" href="">Category1</a>
+                <a class="list-group-item" href="">Category2</a>
+                <a class="list-group-item" href="">Category3</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
             <%= render template: "quizzes/index" %>
     </div>
-<p class="lead text-success">  Rank: <%= ranking %> </p>
+
 
 
 
 </div>
+    

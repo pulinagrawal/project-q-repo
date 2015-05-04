@@ -12,10 +12,11 @@ class ProfilesController < ApplicationController
         if @profile.save
             sign_in @profile
             flash[:success] = "Welcome to the Sample App!"
-            UserMailer.welcome_email(@profile)
+            # logger.debug(Rails.application.config.action_mailer.smtp_settings)
+            UserMailer.welcome_email(@profile).deliver_later!
             redirect_to profile_url(@profile)
         else
-            redirect_to category_path
+            redirect_to root_url
         end
     end
 
@@ -51,5 +52,7 @@ class ProfilesController < ApplicationController
         @profile= Profile.find(params[:id])
         redirect_to(root_url) unless current_profile==@profile
     end
+
+
 
 end

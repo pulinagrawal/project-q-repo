@@ -18,3 +18,4 @@ bundle install --without production
 bin/rake db:setup
 bin/rails s -b 0.0.0.0
 ```
+Reference pictures taken from 100picsquizanswers.com/

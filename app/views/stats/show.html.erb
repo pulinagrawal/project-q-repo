@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-6 list-group">
+        <h1>Quizzes Taken by Category</h1>
+        <table class="table table-condensed">
+            <thead>
+                <tr><th>Category</th><th>Per of Quizzes</th><th>Per Correct</th></tr>
+            </thead>
+            <tbody>
+                <% @categories.each do |c| %>
+                    <tr>
+                        <td><%= c.category_name %></td>
+                        <td><%= c.stats.quiz_percent(@total_count).round(1) %>%</td>
+                        <td><%= c.stats.percent_correct.round(1) %>%</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6 list-group">
+        <h1>Quizzes Taken by Age Group</h1>
+        <a href="#" class="list-group-item">
+            People near your age generally get <%=(@peer_percent * 100.0).round%>%
+            questions correct.
+        </a>
+        <table class="table table-condensed">
+            <thead>
+                <tr><th>Age Group</th><th>Per of Quizzes</th><th>Per Correct</th></tr>
+            </thead>
+            <tbody>
+                <% @AGE_GROUPS.keys.each do |grp| %>
+                    <tr>
+                        <td><%= grp %></td>
+                        <td><%= @age_stats[grp].quiz_percent(@total_count).round(1) %>%</td>
+                        <td><%= @age_stats[grp].percent_correct.round(1) %>%</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

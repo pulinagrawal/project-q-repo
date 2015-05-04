@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # To route invalid path to root_url
-  match '*path' , to: redirect('/'), via: :get
-
   root 'static_pages#index'
   get 'myhome', to:'static_pages#landing', as: 'landing'
 
@@ -30,6 +27,8 @@ Rails.application.routes.draw do
   
   get 'stats', to: 'stats#show'
 
+  # To route invalid path to root_url
+  match '*path' , to: redirect('/'), via: :get 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -15,6 +15,8 @@ class StaticPagesController < ApplicationController
     end
 
     helper_method :ranking
+    helper_method :showFewQuizzes
+    helper_method :returnPoint
 
     def ranking
         sql = "SELECT COUNT(*) AS [rank] FROM profiles "+
@@ -24,4 +26,16 @@ class StaticPagesController < ApplicationController
                 return user[0] 
             end 
     end
+
+    def returnPoint
+
+        sql ="SELECT reward_amount FROM profiles WHERE id = #{@profile.id}"
+            ActiveRecord::Base.connection.execute(sql).each do |user| 
+                return user[0] 
+            end 
+
+    end 
+  
 end
+
+

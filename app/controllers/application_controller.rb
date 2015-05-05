@@ -47,4 +47,5 @@ class ApplicationController < ActionController::Base
             @peer_percent = 0
         end
     end
+
 end

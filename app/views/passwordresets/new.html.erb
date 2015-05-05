@@ -3,7 +3,7 @@
 
 	<div class="row">
         <div class="col-md-12">
-			<h1>Reset your password</h1>
+			<h1>Enter your username, Reset Password</h1>
 		</div>
  	</div>
 
@@ -11,12 +11,12 @@
         <div class="col-md-8">
         	<%= form_tag passwordreset_profile_path, :method => :post do %>
   				<div class="form-group">
-    					<%= label_tag :email, :class => "col-md-2 control-label" %>
-						<div class="col-md-10">
-							<%= text_field_tag :email, placeholder: "Email XXXX@XXX.XXX", :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}'  ,:class => "form-control" %>
+    					<%= label_tag :email %>						
+						<%= text_field_tag :email,params[:email] %>
 						</div>
-  				</div>
   				<div class="actions"><%= submit_tag "Reset Password" %></div>
+  				</div>
+  				
 			<% end %>
     	</div>
 

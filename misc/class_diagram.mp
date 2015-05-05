@@ -33,7 +33,8 @@ beginfig(1);
         "option3: string",
         "option4: string",
         "question: string",
-        "category_id: integer"
+        "category_id: integer",
+        "mediaurl: string"
     ) (
     );
     

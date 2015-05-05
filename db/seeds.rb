@@ -11,39 +11,6 @@ sport = Category.create({category_name: "Sport"})
 logo = Category.create({category_name: "Logo"})
 animal = Category.create({category_name: "Animal"})
 
-Quiz.create!({
-    id: 1,
-    profile_id: mo.id,
-    start_date: Date.new(1989,1,1),
-    end_date: Date.new(1989,1,1),
-    question1: math_questions[0].id, correct1: true,
-    question2: math_questions[1].id, correct2: false,
-    question3: math_questions[2].id, correct3: true,
-    question4: math_questions[3].id, correct4: nil,
-    question5: math_questions[4].id, correct5: nil,
-})
-
-Quiz.create!({
-    profile_id: mo.id,
-    start_date: Date.new(1989,1,1),
-    end_date: Date.new(1989,1,1),
-    question1: history_questions[0].id, correct1: true,
-    question2: history_questions[1].id, correct2: false,
-    question3: history_questions[2].id, correct3: true,
-    question4: history_questions[3].id, correct4: nil,
-    question5: history_questions[4].id, correct5: nil,
-})
-
-Quiz.create!({
-    profile_id: mo.id,
-    start_date: Date.new(1989,1,1),
-    end_date: Date.new(1989,1,1),
-    question1: geography_questions[0].id, correct1: true,
-    question2: geography_questions[1].id, correct2: false,
-    question3: geography_questions[2].id, correct3: true,
-    question4: geography_questions[3].id, correct4: nil,
-    question5: geography_questions[4].id, correct5: nil,
-})
 
 math_questions = Question.create([
     { category_id: math.id, level: 1, correct_answer: "11", option1: "11", option2: "2", option3: "3", option4: "4", question: "What is 10 + 1?"  },
@@ -220,7 +187,7 @@ sport_questions = Question.create([
     { category_id: sport.id, mediaurl:"1_sport_swimming.jpg", level: 1, correct_answer: "Swimming", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
     { category_id: sport.id, mediaurl:"2_sport_football.jpg", level: 1, correct_answer: "Football", option1: "Swimming", option2: "Football", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
     { category_id: sport.id, mediaurl:"3_sport_tennis.jpg", level: 1, correct_answer: "Tennis", option1: "Swimming", option2: "Cricket", option3: "Tennis", option4: "Basketball", question: "Name the sport or game in the picture?"},
-    { category_id: sport.id, mediaurl:"4_sport_basketball.jpg", level: 1, correct_answer: "Basketball" option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"4_sport_basketball.jpg", level: 1, correct_answer: "Basketball", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
     { category_id: sport.id, mediaurl:"5_sport_cricket.jpg", level: 1, correct_answer: "Cricket", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
     { category_id: sport.id, mediaurl:"6_sport_baseball.jpg", level: 1, correct_answer: "Baseball", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
     { category_id: sport.id, mediaurl:"7_sport_arm_wrestling.jpg", level: 1, correct_answer: "Arm Wrestling", option1: "Swimming", option2: "Arm Wrestling", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
@@ -231,7 +198,7 @@ sport_questions = Question.create([
     { category_id: sport.id, level: 2, correct_answer: "Rawalpindi Express", option1: "Fast Tiger", option2: "Rawalpindi Express", option3: "Don", option4: "The Eagle", question: "What is Shoaib Akhtars nickname?"},
     { category_id: sport.id, level: 2, correct_answer: "Pakistan", option1: "UAE", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Against which team did Sachin play his last ODI?"},
     { category_id: sport.id, level: 2, correct_answer: "Pakistan", option1: "New Zealand", option2: "Australia", option3: "Bangladesh", option4: "Pakistan", question: "Against which team did Sachin Tendulkar make his test debut?"},
-    { category_id: sport.id, level: 2, correct_answer: "2003", option1: "1999", option2: "1997", option3: "2004", option4: "2003", question: "When did Sachin receive the Wisden cricketer of the year award?"}
+    { category_id: sport.id, level: 2, correct_answer: "2003", option1: "1999", option2: "1997", option3: "2004", option4: "2003", question: "When did Sachin receive the Wisden cricketer of the year award?"},
     { category_id: sport.id, level: 2, correct_answer: "India", option1: "Australia", option2: "Pakistan", option3: "Bangladesh", option4: "India", question: "Who won ICC Cricket World Cup in 2011?"},
     { category_id: sport.id, level: 2, correct_answer: "Pakistan", option1: "Australia", option2: "Pakistan", option3: "Bangladesh", option4: "India", question: "Who won ICC Cricket World Cup in 1992?"},
     { category_id: sport.id, level: 2, correct_answer: "Sri Lanka", option1: "Sri Lanka", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Who won ICC Cricket World Cup in 1996?"},
@@ -241,12 +208,45 @@ sport_questions = Question.create([
     { category_id: sport.id, level: 3, correct_answer: " He wore uniform number 80 for the San Francisco 49ers", option1: "He never lost a Super Bowl game", option2: "He played in the Canadian Football League for two seasons", option3: "He was a star for the University of Alabama", option4: "He wore uniform number 80 for the San Francisco 49ers", question: "Wide receiver Jerry Rice was an NFL superstar. Which one of these statements about Rice is true?"},
     { category_id: sport.id, level: 3, correct_answer: "Buffalo Bills", option1: "Pittsburgh Steelers", option2: "San Diego Charger", option3: "Oakland Raiders", option4: "Buffalo Bills", question: "Emmitt Smith was a star NFL running back for more than a decade and was named the Most Valuable Player of Super Bowl XXVIII (1994). Which team did the Dallas Cowboys defeat in that contest?"},
     { category_id: sport.id, level: 3, correct_answer: "The Hogs", option1: "The Animals", option2: "Gimm's Reapers", option3: "The Dogs", option4: "The Hogs", question: "Russ Grimm played guard for the Washington Redskins from 1981 to 1991. What was the nickname of Washington's offensive line during those years?"},
-    { category_id: sport.id, level: 3, correct_answer: "Detroit Lions", option1: "Detroit Lions", option2: "Chicago Bears", option3: "San Francisco 49ers", option4: "Green Bay packers", question: "Dick LeBeau played cornerback in the NFL from 1959 to 1972. For which team did LeBeau play his entire pro career?"}
+    { category_id: sport.id, level: 3, correct_answer: "Detroit Lions", option1: "Detroit Lions", option2: "Chicago Bears", option3: "San Francisco 49ers", option4: "Green Bay packers", question: "Dick LeBeau played cornerback in the NFL from 1959 to 1972. For which team did LeBeau play his entire pro career?"},
     { category_id: sport.id, level: 3, correct_answer: "Defensive tackle", option1: "Defensive tackle", option2: "Wide receiver", option3: "Kicker", option4: "Safety", question: "John Randle played for the Vikings and the Seahawks in an NFL career which lasted from 1990 to 2003. Which position did Randle play?"},
     { category_id: sport.id, level: 3, correct_answer: "Mile High Stadium", option1: "Dolphins Stadium", option2: "Mile High Stadium", option3: "Lambeau Field", option4: "Oakland Coliseum", question: "Floyd Little was a star running back in the AFL and NFL from 1967 to 1975. In which stadium did Little play his home games?"},
     { category_id: sport.id, level: 3, correct_answer: "57", option1: "66", option2: "57", option3: "77", option4: "1", question: "Linebacker Rickey Jackson played his first 13 NFL seasons (1981-1993) with the New Orleans Saints. Which uniform number did Jackson wear for the Saints?"},
     { category_id: sport.id, level: 3, correct_answer: "Woody Hayes", option1: "Bear Bryant", option2: "Ara Parseghian", option3: "Bo Schembechler", option4: "Woody Hayes", question: "Hall of Famer Dick LeBeau played collegiate football at Ohio State University during the late 1950s. Who was LeBeau's head coach at OSU?"},
     { category_id: sport.id, level: 3, correct_answer: "New Haven, Connecticut", option1: "New Haven, Connecticut", option2: "Providence, Rhode Island", option3: "Philadelphia, Pennsylvania", option4: "Boston, Massachusetts", question: "In which city, famous for its Yale University, did Hall of Fame running back Floyd Little grow up?"}
 
-    
 ])
+
+Quiz.create!({
+    id: 1,
+    profile_id: mo.id,
+    start_date: Date.new(1989,1,1),
+    end_date: Date.new(1989,1,1),
+    question1: math_questions[0].id, correct1: true,
+    question2: math_questions[1].id, correct2: false,
+    question3: math_questions[2].id, correct3: true,
+    question4: math_questions[3].id, correct4: nil,
+    question5: math_questions[4].id, correct5: nil,
+})
+
+Quiz.create!({
+    profile_id: mo.id,
+    start_date: Date.new(1989,1,1),
+    end_date: Date.new(1989,1,1),
+    question1: history_questions[0].id, correct1: true,
+    question2: history_questions[1].id, correct2: false,
+    question3: history_questions[2].id, correct3: true,
+    question4: history_questions[3].id, correct4: nil,
+    question5: history_questions[4].id, correct5: nil,
+})
+
+Quiz.create!({
+    profile_id: mo.id,
+    start_date: Date.new(1989,1,1),
+    end_date: Date.new(1989,1,1),
+    question1: geography_questions[0].id, correct1: true,
+    question2: geography_questions[1].id, correct2: false,
+    question3: geography_questions[2].id, correct3: true,
+    question4: geography_questions[3].id, correct4: nil,
+    question5: geography_questions[4].id, correct5: nil,
+})

@@ -22,29 +22,30 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>Rank Stuff goes here</p>
+                        <p><%= ranking %></p>
                         <p>Panel class can be modified to change the look</p>
                     </div>
                     <div class="panel-footer">
-                        Rank :<%= ranking %>
+                        Rank 
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>Points Stuff goes here</p>
+                        <p><%= returnPoint %></p>
                         <p>Panel class can be modified to change the look</p>
                     </div>
                     <div class="panel-footer">
-                        Points :<%= returnPoint %>                       
+                        Points                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-lg-6">
-        <div class="panel panel-default">
+        <div class="row">
+            <div class="panel panel-default">
                 <a class="list-group-item active" href="#">Recommended Quizzees</a>
                 <a class="list-group-item" href="#">
                        
@@ -85,6 +86,14 @@
                                      Recommended
                         </span>        
                 </a>                
+            </div>
+        </div>
+        <div class="row">
+                <div class="list-group">
+                        <a class="list-group-item active" href="">Recent Quizzees</a>
+                        <a class="list-group-item" href="">Quiz1</a>
+                        <a class="list-group-item" href="">Quiz2</a>
+                </div>
         </div>
     </div>
 </div>
@@ -92,9 +101,5 @@
     <div class="col-lg-12">
             <%= render template: "quizzes/index" %>
     </div>
-
-
-
-
 </div>
     

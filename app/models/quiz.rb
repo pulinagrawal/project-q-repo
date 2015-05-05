@@ -30,4 +30,17 @@ class Quiz < ActiveRecord::Base
     validates :correct3, inclusion: { in: [true, false, nil] }
     validates :correct4, inclusion: { in: [true, false, nil] }
     validates :correct5, inclusion: { in: [true, false, nil] }
+    
+    def score
+        count = 0
+        score = 0
+        points = 1
+        1.upto(5).each do |idx|
+            if self["correct#{idx}"]
+                score += points
+                points *= 2
+            end
+        end
+        return score
+    end
 end

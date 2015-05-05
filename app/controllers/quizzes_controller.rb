@@ -39,19 +39,6 @@ class QuizzesController < ApplicationController
         end
     end
 
-    def quiz_score
-        count = 0
-        score = 0
-        points = 1
-        1.upto(5).each do |idx|
-            if @quiz["correct#{idx}"]
-                score += points
-                points *= 2
-            end
-        end
-        return score
-    end
-
     def show
         @quiz = Quiz.find(params[:id])
         deduce_quiz_state
@@ -105,7 +92,7 @@ class QuizzesController < ApplicationController
         # displayed
         if @current_question_num == 5
             #Just finished quiz - we need to calculate the score
-            qs = quiz_score
+            qs = @quiz.score
             logger.debug "User #{@quiz.profile_id} score is inc'ed by #{qs}"
 
             user = Profile.find(@quiz.profile_id)
@@ -150,7 +137,7 @@ class QuizzesController < ApplicationController
             return
         end
 
-        @quiz_score = quiz_score
+        @quiz_score = @quiz.score
     end
 
     def destroy

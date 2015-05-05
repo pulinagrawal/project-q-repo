@@ -13,7 +13,10 @@ class ProfilesController < ApplicationController
             sign_in @profile
             flash[:success] = "Welcome to the Sample App!"
             # logger.debug(Rails.application.config.action_mailer.smtp_settings)
-            UserMailer.welcome_email(@profile).deliver_later!
+            begin
+                UserMailer.welcome_email(@profile).deliver_later!
+            rescue
+            end        
             redirect_to profile_url(@profile)
         else
             redirect_to root_url

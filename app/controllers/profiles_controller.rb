@@ -7,14 +7,14 @@ class ProfilesController < ApplicationController
     end
 
     def create
-        @profile = Profile.new(params.require(:profile).permit(:first_name, :last_name, :birthday, :password, :password_confirmation, :email))
-
+        @profile = Profile.new(params.require(:profile).permit(:first_name, :last_name, :birthday, :password, :password_confirmation, :email, :reward_amount))        
+        @profile.reward_amount = 0
         if @profile.save
             sign_in @profile
             flash[:success] = "Welcome to the Sample App!"
             # logger.debug(Rails.application.config.action_mailer.smtp_settings)
             UserMailer.welcome_email(@profile).deliver_later!
-            redirect_to profile_url(@profile)
+            redirect_to profile_url(@profile)            
         else
             redirect_to root_url
         end

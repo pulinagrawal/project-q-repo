@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   get '/passwordresets/new', to: 'passwordresets#new', as: 'new_password'
   post '/passwordresets', to: 'passwordresets#passwordreset', as: 'passwordreset_profile'
+  get '/passwordresets/edit', to: 'passwordresets#edit', as: 'passwordreset_edit'
+  patch '/passwordresets/', to: 'passwordresets#update'
+  patch '/passwordresets/', to: 'passwordresets#update'
   
   get 'quizzes/new', to: 'quizzes#new', as: 'newquiz'
   get 'quizzes/index', to: 'quizzes#index', as:'quiz_index'

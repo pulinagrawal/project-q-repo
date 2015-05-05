@@ -1,8 +1,6 @@
 class StaticPagesController < ApplicationController
     def landing
 
-           quizzes_index_requirements
-
     quizzes_index_requirements
 
     @quiz = Quiz.all

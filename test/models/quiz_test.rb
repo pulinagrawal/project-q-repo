@@ -68,4 +68,33 @@ class QuizTest < ActiveSupport::TestCase
     @quiz.correct5 = false
     assert @quiz.valid?
   end
+
+  test "correct scoring" do
+    (1..5).each { |i| @quiz["correct#{i}"] = nil }
+    assert_equal 0, @quiz.score
+
+    (1..5).each { |i| @quiz["correct#{i}"] = false }
+    assert_equal 0, @quiz.score
+
+    (1..5).each { |i| @quiz["correct#{i}"] = nil }
+
+    @quiz.correct1 = true
+    assert_equal 1, @quiz.score
+
+    @quiz.correct2 = true
+    assert_equal 3, @quiz.score
+
+    @quiz.correct3 = true
+    assert_equal 7, @quiz.score
+
+    @quiz.correct4 = true
+    assert_equal 15, @quiz.score
+
+    @quiz.correct5 = true
+    assert_equal 31, @quiz.score
+
+    @quiz.correct1 = false
+    @quiz.correct5 = false
+    assert_equal 7, @quiz.score
+  end
 end

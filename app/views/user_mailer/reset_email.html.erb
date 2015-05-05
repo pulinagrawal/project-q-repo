@@ -6,7 +6,7 @@
   <body>
     <h1>Dear, <%= @profile.first_name %> please reset your password</h1>
     <p>
-      To reset your password, just follow this link: <%= passwordreset_edit_path %>.
+      <%= link_to "Reset password", passwordreset_edit_url(:token => @profile.remember_token)%>
     </p>    
   </body>
 </html>

@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
     def landing
 
     quizzes_index_requirements
+    @recent=Quiz.where(profile_id:@profile.id).order("created_at DESC").limit(2)
 
     @quiz = Quiz.all
 #    @categories=Category.all
@@ -51,8 +52,7 @@ class StaticPagesController < ApplicationController
 
 
     helper_method :ranking
-    helper_method :showFewQuizzes
-    helper_method :returnPoint
+    
 
     def ranking
         sql = "SELECT COUNT(*) AS [rank] FROM profiles "+
@@ -63,14 +63,7 @@ class StaticPagesController < ApplicationController
             end 
     end
 
-    def returnPoint
-
-        sql ="SELECT reward_amount FROM profiles WHERE id = #{@profile.id}"
-            ActiveRecord::Base.connection.execute(sql).each do |user| 
-                return user[0] 
-            end 
-
-    end 
+    
   
 end
 

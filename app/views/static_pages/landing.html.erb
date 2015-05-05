@@ -12,32 +12,8 @@
                             <span class="badge alert-success"><%=@reward_amount%></span>
                                 points in total!
                                 You are a
-                            <span class="badge alert-success"><%=@title%></span>
+                            <span class="badge alert-success"><%=@title%></span>! Your rank is  <span class="badge alert-success"><%= ranking %></span>
                         </h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <p><%= ranking %></p>
-                        <p>Panel class can be modified to change the look</p>
-                    </div>
-                    <div class="panel-footer">
-                        Rank 
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <p><%= returnPoint %></p>
-                        <p>Panel class can be modified to change the look</p>
-                    </div>
-                    <div class="panel-footer">
-                        Points                        
                     </div>
                 </div>
             </div>
@@ -89,11 +65,14 @@
             </div>
         </div>
         <div class="row">
-                <div class="list-group">
-                        <a class="list-group-item active" href="">Recent Quizzees</a>
-                        <a class="list-group-item" href="">Quiz1</a>
-                        <a class="list-group-item" href="">Quiz2</a>
-                </div>
+                <ul class="list-group">
+                        <li class="list-group-item active" href="">Recent Quizzees</li>
+                        <% @recent.each do |rec|%>
+                            <li class="list-group-item">
+                               <%= link_to "Quiz #{rec.id} with score #{rec.score}", quiz_path(rec.id)%>
+                            </li>
+                        <% end %>
+                </ul>
         </div>
     </div>
 </div>

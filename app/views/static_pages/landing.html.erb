@@ -23,6 +23,7 @@
         <div class="row">
             <div class="panel panel-default">
                 <a class="list-group-item active" href="#">Recommended Quizzees</a>
+                    
                     <% maximum = @done_new.max                                 
                        for i in 0..@done_new.count
                            if @done_new[i] == maximum
@@ -32,21 +33,20 @@
                                i=i+1                                        
                            end 
                        end                                            
+                       if maximum == 0
                     %> 
-                            
-                <%= link_to newquiz_path(category: @index+1, level: 3) , :class => "list-group-item" %>
-                    <p>
-                        <%=  "#{Category.find(@index+1).category_name}" %>
-                        <span class="badge">
-                            <span class="glyphicon glyphicon-record">
-                            </span>
-                            Recommended
-                        </span>                      
-                    </p>
+                <li class="list-group-item">
+                <%= link_to "#{Category.find(@index+1).category_name}", newquiz_path(category: @index+1, level: 1)%>
+                </li>                               
+                <% else %>                    
+                <li class="list-group-item">
+                <%= link_to "#{Category.find(@index+1).category_name}", newquiz_path(category: @index+1, level: 3)%>
+                </li>          
+                <% end %>                
                     <%      
                             minimum = @done_new.min                                 
                                 for i in 0..@done_new.count
-                                    if @done_new[i] == minimum
+                                    if @done_new[i] == minimum && i!=@index
                                         @index_1 = i
                                         break        
                                     else    
@@ -54,15 +54,9 @@
                                     end 
                                 end                                            
                             %> 
-                <%= link_to newquiz_path(category: @index_1+1, level: 1) , :class => "list-group-item" %>
-                        <p>
-                            <%=  "#{Category.find(@index_1+1).category_name}" %> 
-                            <span class="badge">
-                                <span class="glyphicon glyphicon-record">
-                                </span>
-                                Recommended
-                            </span>        
-                        </p>
+                <li class="list-group-item">                
+                <%= link_to "#{Category.find(@index_1+1).category_name}", newquiz_path(category: @index_1+1, level: 1)%>      
+                </li>                                      
             </div>
         </div>
         <div class="row">

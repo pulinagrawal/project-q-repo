@@ -11,6 +11,7 @@ sport = Category.create({category_name: "Sport"})
 logo = Category.create({category_name: "Logo"})
 animal = Category.create({category_name: "Animal"})
 
+
 math_questions = Question.create([
     { category_id: math.id, level: 1, correct_answer: "11", option1: "11", option2: "2", option3: "3", option4: "4", question: "What is 10 + 1?"  },
     { category_id: math.id, level: 1, correct_answer: "1300", option1: "13000", option2: "13", option3: "130", option4: "1300", question: "What is 100 * 13?"  },
@@ -45,11 +46,11 @@ math_questions = Question.create([
 ])
 
 history_questions = Question.create([
-	{category_id: history.id, level: 1, correct_answer: "George Washington", option1: "John Adams", option2: "George Washington", option3: "Andrew Jackson", option4: "Thomas Jefferson", question: "Who was the first President of the United States?"},
-	{category_id: history.id, level: 1, correct_answer: "The American Civil War", option1: "War of 1812", option2: "World War I", option3: "The American Civil War", option4: "The Revolutionary War ", question: "What war was fought on American soil from 1861 to 1865?"},
-	{category_id: history.id, level: 1, correct_answer: " Barack Obama", option1: " Abraham Lincoln", option2: "Ulysses S. Grant", option3: "Barack Obama", option4: "Andrew Johnson", question: "Who was the 16th president of the US?"},
-	{category_id: history.id, level: 1, correct_answer: "The Democrats", option1: "The Democrats", option2: "The Federalists", option3: "The Progressives", option4: "The Independants", question: "Today in the United States government there are two major political parties.  The Republicians are one of the parties who is the other party?"},
-	{category_id: history.id, level: 1, correct_answer: "Franklin D. Roosevelt", option1: "Dwight Eisenhower", option2: "Franklin D. Roosevelt", option3: "Herbert Hoover", option4: "Harry Truman ", question: "Who was the president from 1933 to 1945,  the only president to serve more than 8 years in office?"},
+    {category_id: history.id, level: 1, correct_answer: "George Washington", option1: "John Adams", option2: "George Washington", option3: "Andrew Jackson", option4: "Thomas Jefferson", question: "Who was the first President of the United States?"},
+    {category_id: history.id, level: 1, correct_answer: "The American Civil War", option1: "War of 1812", option2: "World War I", option3: "The American Civil War", option4: "The Revolutionary War ", question: "What war was fought on American soil from 1861 to 1865?"},
+    {category_id: history.id, level: 1, correct_answer: "Barack Obama", option1: " Abraham Lincoln", option2: "Ulysses S. Grant", option3: "Barack Obama", option4: "Andrew Johnson", question: "Who was the 16th president of the US?"},
+    {category_id: history.id, level: 1, correct_answer: "The Democrats", option1: "The Democrats", option2: "The Federalists", option3: "The Progressives", option4: "The Independants", question: "Today in the United States government there are two major political parties.  The Republicians are one of the parties who is the other party?"},
+    {category_id: history.id, level: 1, correct_answer: "Franklin D. Roosevelt", option1: "Dwight Eisenhower", option2: "Franklin D. Roosevelt", option3: "Herbert Hoover", option4: "Harry Truman ", question: "Who was the president from 1933 to 1945,  the only president to serve more than 8 years in office?"},
     {category_id: history.id, level: 1, correct_answer: "New York", option1: "Washington DC", option2: "Dallas", option3: "Seattle", option4: "New York", question: "In which city is the Empire State Building located?"},
     {category_id: history.id, level: 1, correct_answer: "Spanish", option1: "Spanish", option2: "French", option3: "Chinese", option4: "Hindi", question: "What is the second most spoken language in America?"},
     {category_id: history.id, level: 1, correct_answer: " Abraham Lincoln", option1: " Abraham Lincoln", option2: "Ulysses S. Grant", option3: "James Buchanan", option4: "Andrew Johnson", question: "Who is the current president of America?"},
@@ -78,60 +79,41 @@ history_questions = Question.create([
 
 ])
 
-sport_questions = Question.create([
-	{ category_id: sport.id, level: 1, correct_answer: "Stumped", option1: "Stumped", option2: "DDLJ", option3: "Dil Se", option4: "Chak de India", question: "Tendulkar featured in which Bollywood film?"},
-	{ category_id: sport.id, level: 1, correct_answer: "Rawalpindi Express", option1: "Fast Tiger", option2: "Rawalpindi Express", option3: "Don", option4: "The Eagle", question: "What is Shoaib Akhtars nickname?"},
-	{ category_id: sport.id, level: 1, correct_answer: "Pakistan", option1: "UAE", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Against which team did Sachin play his last ODI?"},
-	{ category_id: sport.id, level: 1, correct_answer: "Pakistan", option1: "New Zealand", option2: "Australia", option3: "Bangladesh", option4: "Pakistan", question: "Against which team did Sachin Tendulkar make his test debut?"},
-	{ category_id: sport.id, level: 1, correct_answer: "2003", option1: "1999", option2: "1997", option3: "2004", option4: "2003", question: "When did Sachin receive the Wisden cricketer of the year award?"}
-
-    
-])
-
 
 geography_questions = Question.create([
-	{ category_id: geography.id, level: 1, correct_answer: "Beijing", option1: "Khartoum", option2: "Beijing", option3: "Ottawa", option4: "Panama City", question: "What is the capital of China?"},
-	{ category_id: geography.id, level: 1, correct_answer: "New Delhi", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "New Delhi", question: "What is the capital of India?"},
-	{ category_id: geography.id, level: 1, correct_answer: "Washington DC", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Washington DC", question: "What is the capital of United States of America?"},
-	{ category_id: geography.id, level: 1, correct_answer: "Islamabad", option1: "karachi", option2: "Lahore", option3: "Islamabad", option4: "Hydrabad", question: "What is the capital of Pakistan?"},
-	{ category_id: geography.id, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"}
-
+    { category_id: geography.id, level: 1, correct_answer: "Beijing", option1: "Khartoum", option2: "Beijing", option3: "Ottawa", option4: "Panama City", question: "What is the capital of China?"},
+    { category_id: geography.id, level: 1, correct_answer: "New Delhi", option1: "Kolkata", option2: "Bombay", option3: "Bengaluru", option4: "New Delhi", question: "What is the capital of India?"},
+    { category_id: geography.id, level: 1, correct_answer: "Washington DC", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Washington DC", question: "What is the capital of United States of America?"},
+    { category_id: geography.id, level: 1, correct_answer: "Islamabad", option1: "karachi", option2: "Lahore", option3: "Islamabad", option4: "Hydrabad", question: "What is the capital of Pakistan?"},
+    { category_id: geography.id, level: 1, correct_answer: "Tehran", option1: "Khartoum", option2: "Beijing", option3: "Tehran", option4: "Amsterdam", question: "What is the capital of Iran?"},
+    { category_id: geography.id, level: 1, correct_answer: "Abu Dhabi", option1: "Abu Dhabi", option2: "Beijing", option3: "Ottawa", option4: "Panama City", question: "What is the capital of United Arab Emirates?"},
+    { category_id: geography.id, level: 1, correct_answer: "Abuja", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Abuja", question: "What is the capital of Nigera?"},
+    { category_id: geography.id, level: 1, correct_answer: "Addis Ababa", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Addis Ababa", question: "What is the capital of Ethopia"},
+    { category_id: geography.id, level: 1, correct_answer: "Amsterdam", option1: "karachi", option2: "Lahore", option3: "Amsterdam", option4: "Hydrabad", question: "What is the capital of Netherlands?"},
+    { category_id: geography.id, level: 1, correct_answer: "Baku", option1: "Khartoum", option2: "Beijing", option3: "Baku", option4: "Amsterdam", question: "What is the capital of Azerbaijan?"},
+    { category_id: geography.id, level: 2, correct_answer: "Berlin", option1: "Khartoum", option2: "Berlin", option3: "Ottawa", option4: "Panama City", question: "What is the capital of Germany?"},
+    { category_id: geography.id, level: 2, correct_answer: "Belgrade", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Belgrade", question: "What is the capital of Serbia?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bern", option1: "Kansas ", option2: "Memphis", option3: "Germantown", option4: "Bern", question: "What is the capital of Switzerland?"},
+    { category_id: geography.id, level: 2, correct_answer: "Brussels", option1: "Karachi", option2: "Lahore", option3: "Brussels", option4: "Hydrabad", question: "What is the capital of Belgium?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bucharest", option1: "Khartoum", option2: "Beijing", option3: "Bucharest", option4: "Amsterdam", question: "What is the capital of Romania?"},
+    { category_id: geography.id, level: 2, correct_answer: "Brasilia", option1: "Khartoum", option2: "Beijing", option3: "Ottawa", option4: "Brasilia", question: "What is the capital of Brazil?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bangkok", option1: "Kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Bangkok", question: "What is the capital of Thailand?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bogota", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Bogota", question: "What is the capital of Colombia"},
+    { category_id: geography.id, level: 2, correct_answer: "Bridgetown", option1: "Karachi", option2: "Lahore", option3: "Bridgetown", option4: "Hydrabad", question: "What is the capital of Barbados?"},
+    { category_id: geography.id, level: 2, correct_answer: "Bamako", option1: "Khartoum", option2: "Beijing", option3: "Bamako", option4: "Amsterdam", question: "What is the capital of Mali?"},
+    { category_id: geography.id, level: 3, correct_answer: "Copenhagen", option1: "Khartoum", option2: "Copenhagen", option3: "Ottawa", option4: "Panama City", question: "What is the capital of Denmark?"},
+    { category_id: geography.id, level: 3, correct_answer: "Dhaka", option1: "kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Dhaka", question: "What is the capital of Bangladesh?"},
+    { category_id: geography.id, level: 3, correct_answer: "Dakar", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Dakar", question: "What is the capital of Senegal?"},
+    { category_id: geography.id, level: 3, correct_answer: "Canberra", option1: "Karachi", option2: "Lahore", option3: "Canberra", option4: "Hydrabad", question: "What is the capital of Australia?"},
+    { category_id: geography.id, level: 3, correct_answer: "Caracas", option1: "Khartoum", option2: "Beijing", option3: "Caracas", option4: "Amsterdam", question: "What is the capital of Venezuela?"},
+    { category_id: geography.id, level: 3, correct_answer: "Doha", option1: "Khartoum", option2: "Doha", option3: "Ottawa", option4: "Panama City", question: "What is the capital of Qatar?"},
+    { category_id: geography.id, level: 3, correct_answer: "Dublin", option1: "Kolkata", option2: "Bombay", option3: "Bengaluru", option4: "Dublin", question: "What is the capital of Ireland?"},
+    { category_id: geography.id, level: 3, correct_answer: "Hagatna", option1: "Kansas City", option2: "Memphis", option3: "Germantown", option4: "Hagatna", question: "What is the capital of Guam?"},
+    { category_id: geography.id, level: 3, correct_answer: "Kuala Lumpur", option1: "karachi", option2: "Lahore", option3: "Kuala Lumpur", option4: "Hydrabad", question: "What is the capital of Malaysia?"},
+    { category_id: geography.id, level: 3, correct_answer: "Kathmandu", option1: "Khartoum", option2: "Beijing", option3: "Kathmandu", option4: "Amsterdam", question: "What is the capital of Nepal?"}
 
 ])
 
-Quiz.create!({
-    id: 1,
-    profile_id: mo.id,
-    start_date: Date.new(1989,1,1),
-    end_date: Date.new(1989,1,1),
-    question1: math_questions[0].id, correct1: true,
-    question2: math_questions[1].id, correct2: false,
-    question3: math_questions[2].id, correct3: true,
-    question4: math_questions[3].id, correct4: nil,
-    question5: math_questions[4].id, correct5: nil,
-})
-
-Quiz.create!({
-    profile_id: mo.id,
-    start_date: Date.new(1989,1,1),
-    end_date: Date.new(1989,1,1),
-    question1: history_questions[0].id, correct1: true,
-    question2: history_questions[1].id, correct2: false,
-    question3: history_questions[2].id, correct3: true,
-    question4: history_questions[3].id, correct4: nil,
-    question5: history_questions[4].id, correct5: nil,
-})
-
-Quiz.create!({
-    profile_id: mo.id,
-    start_date: Date.new(1989,1,1),
-    end_date: Date.new(1989,1,1),
-    question1: geography_questions[0].id, correct1: true,
-    question2: geography_questions[1].id, correct2: false,
-    question3: geography_questions[2].id, correct3: true,
-    question4: geography_questions[3].id, correct4: nil,
-    question5: geography_questions[4].id, correct5: nil,
-})
 
 animal_questions = Question.create([
 { category_id: animal.id, mediaurl:"1_animal_sheep.jpg", level: 1, correct_answer: "Sheep", option1: "Cat", option2: "Sheep", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
@@ -155,12 +137,12 @@ animal_questions = Question.create([
 { category_id: animal.id, mediaurl:"19_animal_tortoise.jpg", level: 2, correct_answer: "Tortoise", option1: "Cat", option2: "Dog", option3: "Tortoise", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"20_animal_killer_whale.jpg", level: 2, correct_answer: "Killer Whale", option1: "Cat", option2: "Dog", option3: "Killer Whale", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"21_animal_heron.jpg", level: 3, correct_answer: "Heron", option1: "Heron", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
-{ category_id: animal.id, mediaurl:"22_animal_hippo.jpg", level: 3, correct_answer: "Hippo", option1: "Hippo", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
+{ category_id: animal.id, mediaurl:"22_animal_Hippo.jpg", level: 3, correct_answer: "Hippo", option1: "Hippo", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"23_animal_wildebeest.jpg", level: 3, correct_answer: "Wildebeest", option1: "Wildebeest", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
-{ category_id: animal.id, mediaurl:"24_animal_red_deer.jpg", level: 3, correct_answer: "Red Deer", option1: "Red Deer", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
+{ category_id: animal.id, mediaurl:"24_animal_red deer.jpg", level: 3, correct_answer: "Red Deer", option1: "Red Deer", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"25_animal_gibbon.jpg", level: 3, correct_answer: "Gibbon", option1: "Gibbon", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"26_animal_ibex.jpg", level: 3, correct_answer: "Ibex", option1: "Ibex", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
-{ category_id: animal.id, mediaurl:"27_animal_gazelle.jpg", level: 3, correct_answer: "Gazelle", option1: "Gazelle", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
+{ category_id: animal.id, mediaurl:"27_animal_gazella.jpg", level: 3, correct_answer: "Gazella", option1: "Gazella", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"28_animal_crowned_eagle.jpg", level: 3, correct_answer: "Crowned Eagle", option1: "Crowned Eagle", option2: "Dog", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"29_animal_tamarin.jpg", level: 3, correct_answer: "Tamarin", option1: "Gorilla", option2: "Tamarin", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"},
 { category_id: animal.id, mediaurl:"30_animal_cape_buffalo.jpg", level: 3, correct_answer: "Cape Buffalo", option1: "Gorilla", option2: "Cape Buffalo", option3: "Monkey", option4: "Lion", question: "Name the animal shown in the picture?"}
@@ -200,3 +182,71 @@ logo_questions = Question.create([
 { category_id: logo.id, mediaurl:"logo_twitter.jpg", level: 3, correct_answer: "Twitter", option1: "Twitter", option2: "Samsung", option3: "Pizza Hut", option4: "Google", question: "Name the company whose logo is shown in the picture?"}
 
 ])
+
+sport_questions = Question.create([
+    { category_id: sport.id, mediaurl:"1_sport_swimming.jpg", level: 1, correct_answer: "Swimming", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"2_sport_football.jpg", level: 1, correct_answer: "Football", option1: "Swimming", option2: "Football", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"3_sport_tennis.jpg", level: 1, correct_answer: "Tennis", option1: "Swimming", option2: "Cricket", option3: "Tennis", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"4_sport_basketball.jpg", level: 1, correct_answer: "Basketball", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"5_sport_cricket.jpg", level: 1, correct_answer: "Cricket", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"6_sport_baseball.jpg", level: 1, correct_answer: "Baseball", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"7_sport_arm_wrestling.jpg", level: 1, correct_answer: "Arm Wrestling", option1: "Swimming", option2: "Arm Wrestling", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"8_sport_pool.jpg", level: 1, correct_answer: "Pool", option1: "Pool", option2: "Cricket", option3: "Baseball", option4: "Basketball", question: "Name the sport or game in the picture??"},
+    { category_id: sport.id, mediaurl:"9_sport_table_tennis.jpg", level: 1, correct_answer: "Table Tennis", option1: "Swimming", option2: "Cricket", option3: "Table Tennis", option4: "Basketball", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, mediaurl:"10_sport_ice_hockey.jpg", level: 1, correct_answer: "Ice Hockey", option1: "Swimming", option2: "Cricket", option3: "Baseball", option4: "Ice Hockey", question: "Name the sport or game in the picture?"},
+    { category_id: sport.id, level: 2, correct_answer: "Stumped", option1: "Stumped", option2: "DDLJ", option3: "Dil Se", option4: "Chak de India", question: "Tendulkar featured in which Bollywood film?"},
+    { category_id: sport.id, level: 2, correct_answer: "Rawalpindi Express", option1: "Fast Tiger", option2: "Rawalpindi Express", option3: "Don", option4: "The Eagle", question: "What is Shoaib Akhtars nickname?"},
+    { category_id: sport.id, level: 2, correct_answer: "Pakistan", option1: "UAE", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Against which team did Sachin play his last ODI?"},
+    { category_id: sport.id, level: 2, correct_answer: "Pakistan", option1: "New Zealand", option2: "Australia", option3: "Bangladesh", option4: "Pakistan", question: "Against which team did Sachin Tendulkar make his test debut?"},
+    { category_id: sport.id, level: 2, correct_answer: "2003", option1: "1999", option2: "1997", option3: "2004", option4: "2003", question: "When did Sachin receive the Wisden cricketer of the year award?"},
+    { category_id: sport.id, level: 2, correct_answer: "India", option1: "Australia", option2: "Pakistan", option3: "Bangladesh", option4: "India", question: "Who won ICC Cricket World Cup in 2011?"},
+    { category_id: sport.id, level: 2, correct_answer: "Pakistan", option1: "Australia", option2: "Pakistan", option3: "Bangladesh", option4: "India", question: "Who won ICC Cricket World Cup in 1992?"},
+    { category_id: sport.id, level: 2, correct_answer: "Sri Lanka", option1: "Sri Lanka", option2: "South Africa", option3: "Kenya", option4: "Pakistan", question: "Who won ICC Cricket World Cup in 1996?"},
+    { category_id: sport.id, level: 2, correct_answer: "Australia", option1: "New Zealand", option2: "Australia", option3: "Bangladesh", option4: "Pakistan", question: "Who won ICC Cricket World Cup in 2015?"},
+    { category_id: sport.id, level: 2, correct_answer: "West Indies", option1: "West Indies", option2: "Pakistan", option3: "Bangladesh", option4: "India", question: "Who won ICC Cricket World Cup in 1975?"},
+    { category_id: sport.id, level: 3, correct_answer: "Shaquille O’Neal", option1: "Pau Gasol", option2: "Carmelo Anthony", option3: "Kevin Garnett", option4: "Shaquille O’Neal", question: "Who shared the 2009 All-Star MVP Award with Kobe Bryant?"},
+    { category_id: sport.id, level: 3, correct_answer: " He wore uniform number 80 for the San Francisco 49ers", option1: "He never lost a Super Bowl game", option2: "He played in the Canadian Football League for two seasons", option3: "He was a star for the University of Alabama", option4: "He wore uniform number 80 for the San Francisco 49ers", question: "Wide receiver Jerry Rice was an NFL superstar. Which one of these statements about Rice is true?"},
+    { category_id: sport.id, level: 3, correct_answer: "Buffalo Bills", option1: "Pittsburgh Steelers", option2: "San Diego Charger", option3: "Oakland Raiders", option4: "Buffalo Bills", question: "Emmitt Smith was a star NFL running back for more than a decade and was named the Most Valuable Player of Super Bowl XXVIII (1994). Which team did the Dallas Cowboys defeat in that contest?"},
+    { category_id: sport.id, level: 3, correct_answer: "The Hogs", option1: "The Animals", option2: "Gimm's Reapers", option3: "The Dogs", option4: "The Hogs", question: "Russ Grimm played guard for the Washington Redskins from 1981 to 1991. What was the nickname of Washington's offensive line during those years?"},
+    { category_id: sport.id, level: 3, correct_answer: "Detroit Lions", option1: "Detroit Lions", option2: "Chicago Bears", option3: "San Francisco 49ers", option4: "Green Bay packers", question: "Dick LeBeau played cornerback in the NFL from 1959 to 1972. For which team did LeBeau play his entire pro career?"},
+    { category_id: sport.id, level: 3, correct_answer: "Defensive tackle", option1: "Defensive tackle", option2: "Wide receiver", option3: "Kicker", option4: "Safety", question: "John Randle played for the Vikings and the Seahawks in an NFL career which lasted from 1990 to 2003. Which position did Randle play?"},
+    { category_id: sport.id, level: 3, correct_answer: "Mile High Stadium", option1: "Dolphins Stadium", option2: "Mile High Stadium", option3: "Lambeau Field", option4: "Oakland Coliseum", question: "Floyd Little was a star running back in the AFL and NFL from 1967 to 1975. In which stadium did Little play his home games?"},
+    { category_id: sport.id, level: 3, correct_answer: "57", option1: "66", option2: "57", option3: "77", option4: "1", question: "Linebacker Rickey Jackson played his first 13 NFL seasons (1981-1993) with the New Orleans Saints. Which uniform number did Jackson wear for the Saints?"},
+    { category_id: sport.id, level: 3, correct_answer: "Woody Hayes", option1: "Bear Bryant", option2: "Ara Parseghian", option3: "Bo Schembechler", option4: "Woody Hayes", question: "Hall of Famer Dick LeBeau played collegiate football at Ohio State University during the late 1950s. Who was LeBeau's head coach at OSU?"},
+    { category_id: sport.id, level: 3, correct_answer: "New Haven, Connecticut", option1: "New Haven, Connecticut", option2: "Providence, Rhode Island", option3: "Philadelphia, Pennsylvania", option4: "Boston, Massachusetts", question: "In which city, famous for its Yale University, did Hall of Fame running back Floyd Little grow up?"}
+
+])
+
+Quiz.create!({
+    id: 1,
+    profile_id: mo.id,
+    start_date: Date.new(1989,1,1),
+    end_date: Date.new(1989,1,1),
+    question1: math_questions[0].id, correct1: true,
+    question2: math_questions[1].id, correct2: false,
+    question3: math_questions[2].id, correct3: true,
+    question4: math_questions[3].id, correct4: nil,
+    question5: math_questions[4].id, correct5: nil,
+})
+
+Quiz.create!({
+    profile_id: mo.id,
+    start_date: Date.new(1989,1,1),
+    end_date: Date.new(1989,1,1),
+    question1: history_questions[0].id, correct1: true,
+    question2: history_questions[1].id, correct2: false,
+    question3: history_questions[2].id, correct3: true,
+    question4: history_questions[3].id, correct4: nil,
+    question5: history_questions[4].id, correct5: nil,
+})
+
+Quiz.create!({
+    profile_id: mo.id,
+    start_date: Date.new(1989,1,1),
+    end_date: Date.new(1989,1,1),
+    question1: geography_questions[0].id, correct1: true,
+    question2: geography_questions[1].id, correct2: false,
+    question3: geography_questions[2].id, correct3: true,
+    question4: geography_questions[3].id, correct4: nil,
+    question5: geography_questions[4].id, correct5: nil,
+})

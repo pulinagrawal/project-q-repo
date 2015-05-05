@@ -92,7 +92,7 @@ class QuizzesController < ApplicationController
             session[:last_answer] = "You got question #{@current_question_num} Correct!"
             correct = true
         else
-            session[:last_answer] = "Sorry - you got question #{@current_question_num} wrong"
+            session[:last_answer] = "Sorry - you got question #{@current_question_num} wrong. The correct answer was '#{@current_question.correct_answer}'"
             correct = false
         end
 

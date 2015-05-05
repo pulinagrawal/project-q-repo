@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'myhome', to:'static_pages#landing', as: 'landing'
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :password_resets, only: [:new, :create, :edit, :update]
+  default_url_options :host => "localhost:3000"
 
   get '/signin',  to: 'sessions#new' , as: 'signin'
   delete  '/signout', to: 'sessions#destroy', via: :delete , as: 'signout'
@@ -20,9 +22,10 @@ Rails.application.routes.draw do
 
   get '/passwordresets/new', to: 'passwordresets#new', as: 'new_password'
   post '/passwordresets', to: 'passwordresets#passwordreset', as: 'passwordreset_profile'
-  get '/passwordresets/edit', to: 'passwordresets#edit', as: 'passwordreset_edit'
-  patch '/passwordresets/', to: 'passwordresets#update'
-  patch '/passwordresets/', to: 'passwordresets#update'
+  get '/passwordresets/:token/edit', to: 'passwordresets#edit', as: 'passwordreset_edit'
+  patch '/passwordresets/:token/edit', to: 'passwordresets#update'
+  put '/passwordresets/:token/edit', to: 'passwordresets#update'
+
   
   get 'quizzes/new', to: 'quizzes#new', as: 'newquiz'
   get 'quizzes/index', to: 'quizzes#index', as:'quiz_index'

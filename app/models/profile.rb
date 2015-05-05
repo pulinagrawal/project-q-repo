@@ -32,6 +32,9 @@ class Profile < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
 
 
+before_create :create_activation_digest                    
+
+
 private
 
     def create_remember_token
@@ -59,5 +62,7 @@ private
         self.activation_digest = Profile.digest(activation_token)
     end
     ###########################################
+
+    
 
 end

@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     end
 
     def create
-        @profile = Profile.new(params.require(:profile).permit(:first_name, :last_name, :birthday, :password, :password_confirmation, :email, :reward_amount))        
+        @profile = Profile.new(user_params)
         @profile.reward_amount = 0
         if @profile.save
             sign_in @profile
@@ -42,7 +42,8 @@ class ProfilesController < ApplicationController
     def update
         @profile = Profile.find(params[:id])
 
-        if @profile.update(params.require(:profile).permit(:first_name, :last_name, :birthday, :password, :email))
+        if @profile.update!(user_params)
+            sign_in @profile
             redirect_to profile_url(@profile)
         else
             redirect_to new_profile_url

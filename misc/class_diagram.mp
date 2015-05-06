@@ -34,6 +34,8 @@ beginfig(1);
         "option4: string",
         "question: string",
         "category_id: integer",
+        "quiz_id: integer",
+        "category: string",
         "mediaurl: string"
     ) (
     );

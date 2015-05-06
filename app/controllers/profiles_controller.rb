@@ -41,17 +41,21 @@ class ProfilesController < ApplicationController
 
     def update
         @profile = Profile.find(params[:id])
-
-        if @profile.update!(user_params)
-            sign_in @profile
-            redirect_to profile_url(@profile)
+        
+        if @profile.update_attributes(user_params)
+            if @profile.save(user_params)
+                sign_in @profile
+                redirect_to profile_url(@profile)
+            else
+                render "edit"
+            end
         else
-            redirect_to new_profile_url
+            render "edit"
         end
     end
 
     def user_params
-        params.require(:profile).permit(:first_name, :last_name, :birthday, :password,:password_confirmation, :email)
+        params.require(:profile).permit(:first_name, :last_name, :birthday, :password, :password_confirmation, :email)
     end
 
     #Before action

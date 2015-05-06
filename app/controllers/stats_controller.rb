@@ -89,8 +89,8 @@ class StatsController < ApplicationController
     end
 
     def correct_user
-        correct = current_profile
-        @profile = Profile.find(session[:profile_id])
-        redirect_to(root_url) unless correct == @profile
+        check_profile = current_profile
+        @profile = Profile.find_by_id(session[:profile_id])
+        redirect_to(root_url) unless @profile and check_profile==@profile
     end
 end

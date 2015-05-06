@@ -35,6 +35,7 @@ class RecommendedLevel
 end
 
 class CategoriesController < ApplicationController
+    before_action :correct_user
 
     def show
         quizzes_index_requirements
@@ -60,5 +61,13 @@ class CategoriesController < ApplicationController
                 end
             end
         end
+    end
+    
+    # Before action
+
+    def correct_user
+        check_profile = current_profile
+        @profile = Profile.find_by_id(session[:profile_id])
+        redirect_to(root_url) unless @profile and check_profile==@profile
     end
 end

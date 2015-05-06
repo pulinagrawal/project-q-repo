@@ -26,7 +26,7 @@ class PasswordresetsController < ApplicationController
             flash.now[:danger] = "Password/confirmation can't be blank"
             render 'edit'
         elsif passwords_mismatch?
-            flash.now[:danger] = "Password/confirmation can't be blank"
+            flash.now[:danger] = "Password/confirmation must match"
             render 'edit'
         elsif @profile.update_attributes(user_params)
             sign_out

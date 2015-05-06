@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
         @profile.reward_amount = 0
         if @profile.save
             sign_in @profile
-            flash[:success] = "Welcome to the Sample App!"
+            flash[:success] = "Welcome to Quizzee!"
             # logger.debug(Rails.application.config.action_mailer.smtp_settings)
             begin
                 UserMailer.welcome_email(@profile).deliver_later!

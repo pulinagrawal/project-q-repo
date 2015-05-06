@@ -24,7 +24,8 @@
             <div class="panel panel-default">
                 <a class="list-group-item active" href="#">Recommended Quizzees</a>
                     
-                    <% maximum = @done_new.max                                 
+                <% 
+                       maximum = @done_new.max                                 
                        for i in 0..@done_new.count
                            if @done_new[i] == maximum
                                @index = i
@@ -33,47 +34,50 @@
                                i=i+1                                        
                            end 
                        end                                            
-                       if maximum == 0
-                    %> 
-                <li class="list-group-item">
-                <%= link_to "#{Category.find(@index+1).category_name}", newquiz_path(category: @index+1, level: 1)%>
-                </li>                               
+                %> 
+
+                <% if maximum == 0 %>
+                    <li class="list-group-item">
+                        <%= link_to "#{Category.find(@index+1).category_name}", newquiz_path(category: @index+1, level: 1)%>
+                    </li>                               
                 <% else %>                    
-                <li class="list-group-item">
-                <%= link_to "#{Category.find(@index+1).category_name}", newquiz_path(category: @index+1, level: 3)%>
-                </li>          
+                    <li class="list-group-item">
+                        <%= link_to "#{Category.find(@index+1).category_name}", newquiz_path(category: @index+1, level: 3)%>
+                    </li>          
                 <% end %>                
-                    <%      
-                            minimum = @done_new.min                                 
-                                for i in 0..@done_new.count
-                                    if @done_new[i] == minimum && i!=@index
-                                        @index_1 = i
-                                        break        
-                                    else    
-                                        i=i+1                                        
-                                    end 
-                                end                                            
-                            %> 
+
+                <%      
+                        minimum = @done_new.min                                 
+                            for i in 0..@done_new.count
+                                if @done_new[i] == minimum && i!=@index
+                                    @index_1 = i
+                                    break        
+                                else    
+                                    i=i+1                                        
+                                end 
+                            end                                            
+                %> 
+
                 <li class="list-group-item">                
-                <%= link_to "#{Category.find(@index_1+1).category_name}", newquiz_path(category: @index_1+1, level: 1)%>      
+                    <%= link_to "#{Category.find(@index_1+1).category_name}", newquiz_path(category: @index_1+1, level: 1)%>      
                 </li>                                      
             </div>
         </div>
         <div class="row">
-                <ul class="list-group">
-                        <li class="list-group-item active" href="">Recent Quizzees</li>
-                        <% @recent.each do |rec|%>
-                            <li class="list-group-item">
-                               <%= link_to "Quiz #{rec.id} with score #{rec.score}", quiz_path(rec.id)%>
-                            </li>
-                        <% end %>
-                </ul>
+            <ul class="list-group">
+                <li class="list-group-item active" href="">Recent Quizzees</li>
+                <% @recent.each do |rec|%>
+                <li class="list-group-item">
+                    <%= link_to "Quiz #{rec.id} with score #{rec.score}", quiz_path(rec.id)%>
+                </li>
+                <% end %>
+            </ul>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-lg-12">
-            <%= render template: "quizzes/index" %>
+        <%= render template: "quizzes/index" %>
     </div>
 </div>
     
